@@ -21,7 +21,7 @@ console.log(fetchRequest);
 
 /**
  * pulls information from the form and build the query URL
- * @returns {string} URL for Weather Dashboard API based on form inputs
+ * @returns {string} URL for the API based on form inputs
  */
 function buildQueryURL(input) {
   // queryURL is the url we'll use to query the API
@@ -33,7 +33,7 @@ function buildQueryURL(input) {
 
 /**
  * takes API data (JSON/object) and turns it into elements on the page
- * @param {object} stockData - object containing Weather Dashboard API data
+ * @param {object} stockData - object containing the API data
  */
 function updatePage(stockData) {
 }
@@ -52,7 +52,7 @@ $("#btn-primary").on("click", function (event) {
     .val()
     .trim();
 
-  // Build the query URL for the Fetch request to the Weather Dashboard API
+  // Build the query URL for the Fetch request to the API
   var queryURL = buildQueryURL(input);
 
   // Make the Fetch request to the API - GETs the JSON data at the queryURL.
@@ -77,7 +77,7 @@ $("#btn-secondary").on("click", function (event) {
   // input will be fetched from storage data
   input = "Need to fetch from storage data"
 
-  // Build the query URL for the Fetch request to the Weather Dashboard API
+  // Build the query URL for the Fetch request to the the API
   var queryURL = buildQueryURL(input);
 
   // Make the Fetch request to the API - GETs the JSON data at the queryURL.
@@ -90,7 +90,7 @@ $("#btn-secondary").on("click", function (event) {
 });
 
 function pageOnLoad(input){
-  // Build the query URL for the Fetch request to the NYT API
+  // Build the query URL for the Fetch request to the API
   var queryURL = buildQueryURL(input);
 
   // Make the Fetch request to the API - GETs the JSON data at the queryURL.
