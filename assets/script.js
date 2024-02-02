@@ -16,15 +16,3 @@ const poly_api_key= "BGrqA9jp0bOXCmaiGwDF8i6EACuuN7SD"
 
 const fetchRequest= "//api.polygon.io/v3/reference/tickers?search=" + companyName+ "&apiKey=" + poly_api_key;
 console.log(fetchRequest);
-fetch(fetchRequest)
-.then(response => response.json())
-  .then(companyData => {
-    console.log(companyData);
-  })
-  .catch(error => {
-    console.error('Error fetching company data:', error);
-  });
-
-  $( function() {
-    $( "#datepicker" ).datepicker();
-} );
