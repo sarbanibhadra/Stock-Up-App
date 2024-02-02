@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
 </head>
-<body>
+<body onload="pageOnLoad('London')">
 
     <div class="jumbotron bg-success">
         <h1 class="display-4" id="title"><i class="fa-solid fa-money-bill-trend-up" id="graph"></i> Stock Up <i class="fa-solid fa-coins" id="coins"></i></h1>
@@ -23,8 +23,8 @@
           <form>
             <div class="form-group" >
               <select id="stocks" class="form-select" aria-label="Default select example">
-                <option selected>Stock</option>
-                <option value="1">Apple Inc. </option>
+                <option >Stock</option>
+                <option selected value="AAPL">Apple Inc. </option>
                 <option value="2">Microsoft Corp.</option>
                 <option value="3">Amazon.com Inc.</option>
                 <option value="4">NVIDIA Corp.</option>

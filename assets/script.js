@@ -24,6 +24,9 @@ console.log(fetchRequest);
  * @returns {string} URL for the API based on form inputs
  */
 function buildQueryURL(input) {
+
+  var companysybol = "AAPL";
+
   // queryURL is the url we'll use to query the API
   var queryURL = "";
   
@@ -36,6 +39,7 @@ function buildQueryURL(input) {
  * @param {object} stockData - object containing the API data
  */
 function updatePage(stockData) {
+
 }
 
 // CLICK HANDLERS
@@ -101,6 +105,8 @@ function pageOnLoad(input){
     })
     .then(updatePage);
 }
+
+
 $( function() {
   $( "#datepicker" ).datepicker();
 } );
