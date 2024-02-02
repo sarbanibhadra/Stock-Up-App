@@ -101,3 +101,6 @@ function pageOnLoad(input){
     })
     .then(updatePage);
 }
+$( function() {
+  $( "#datepicker" ).datepicker();
+} );
