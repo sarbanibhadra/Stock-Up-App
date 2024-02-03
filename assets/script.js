@@ -12,7 +12,7 @@ fetch("https://finnhub.io/api/v1/quote?symbol=" + companysybol + "&token=" + api
     console.error('Error fetching company data:', error);
   });
 
-const poly_api_key= "BGrqA9jp0bOXCmaiGwDF8i6EACuuN7SD"
+const poly_api_key= "cmv4ch1r01qog1iu9gogcmv4ch1r01qog1iu9gp0"
 
 const fetchRequest= "//api.polygon.io/v3/reference/tickers?search=" + companyName+ "&apiKey=" + poly_api_key;
 console.log(fetchRequest);
@@ -24,8 +24,14 @@ console.log(fetchRequest);
  * @returns {string} URL for the API based on form inputs
  */
 function buildQueryURL(input) {
+
+  var companysybol = "AAPL";
+  var apiKey= "cmv4ch1r01qog1iu9gogcmv4ch1r01qog1iu9gp0"
+
   // queryURL is the url we'll use to query the API
-  var queryURL = "";
+  //var queryURL = "https://finnhub.io/api/v1//search?q=apple"  + "&token=" + apiKey;
+
+  var queryURL = "https://finnhub.io/api/v1/quote?symbol=" + companysybol + "&token=" + apiKey;
   
   return queryURL;
 }
@@ -36,6 +42,21 @@ function buildQueryURL(input) {
  * @param {object} stockData - object containing the API data
  */
 function updatePage(stockData) {
+  console.log(stockData);
+  selectElement = document.querySelector('#stocks');
+                  
+  output = selectElement.value;
+  if (output == 'AAPL')
+    outputTxt = "Apple Inc."
+
+  $('.card-text0').append(outputTxt)
+  $('.card-text1').append(stockData.c)
+  $('.card-text2').append(stockData.d)
+  $('.card-text3').append(stockData.dp)
+  $('.card-text4').append(stockData.h)
+  $('.card-text5').append(stockData.l)
+  $('.card-text6').append(stockData.o)
+  $('.card-text7').append(stockData.pc)
 }
 
 // CLICK HANDLERS
@@ -92,15 +113,19 @@ $("#btn-secondary").on("click", function (event) {
 function pageOnLoad(input){
   // Build the query URL for the Fetch request to the API
   var queryURL = buildQueryURL(input);
+  console.log(queryURL);
 
   // Make the Fetch request to the API - GETs the JSON data at the queryURL.
   // The data then gets passed as an argument to the updatePage function
   fetch(queryURL)
     .then(function (response) {
+      console.log(response)
       return response.json();
     })
     .then(updatePage);
 }
+
+
 $( function() {
   $( "#datepicker" ).datepicker();
 } );
