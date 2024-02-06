@@ -1,21 +1,21 @@
-const apiKey = 'cmsltq9r01qpvcpt777gcmsltq9r01qpvcpt7780';
-const companysybol = 'AAPL'; //WE WANT THIS TO BE INPUT BY USER
-const companyName="Apple Inc" //polygone to get this?
+// const apiKey = 'cmsltq9r01qpvcpt777gcmsltq9r01qpvcpt7780';
+// const companysybol = 'AAPL'; //WE WANT THIS TO BE INPUT BY USER
+// const companyName="Apple Inc" //polygone to get this?
 
 
-fetch("https://finnhub.io/api/v1/quote?symbol=" + companysybol + "&token=" + apiKey)
-  .then(response => response.json())
-  .then(companyData => {
-    console.log(companyData);
-  })
-  .catch(error => {
-    console.error('Error fetching company data:', error);
-  });
+// fetch("https://finnhub.io/api/v1/quote?symbol=" + companysybol + "&token=" + apiKey)
+//   .then(response => response.json())
+//   .then(companyData => {
+//     console.log(companyData);
+//   })
+//   .catch(error => {
+//     console.error('Error fetching company data:', error);
+//   });
 
-const poly_api_key= "cmv4ch1r01qog1iu9gogcmv4ch1r01qog1iu9gp0"
+// const poly_api_key= "cmv4ch1r01qog1iu9gogcmv4ch1r01qog1iu9gp0"
 
-const fetchRequest= "//api.polygon.io/v3/reference/tickers?search=" + companyName+ "&apiKey=" + poly_api_key;
-console.log(fetchRequest);
+// const fetchRequest= "//api.polygon.io/v3/reference/tickers?search=" + companyName+ "&apiKey=" + poly_api_key;
+// console.log(fetchRequest);
 
 
 
@@ -29,8 +29,6 @@ function buildQueryURL(companysybol) {
   var apiKey= "cmv4ch1r01qog1iu9gogcmv4ch1r01qog1iu9gp0"
 
   // queryURL is the url we'll use to query the API
-  //var queryURL = "https://finnhub.io/api/v1//search?q=apple"  + "&token=" + apiKey;
-
   var queryURL = "https://finnhub.io/api/v1/quote?symbol=" + companysybol + "&token=" + apiKey;
   
   return queryURL;
@@ -39,7 +37,7 @@ function buildQueryURL(companysybol) {
 
 //Second API call for historic stock data - needs to linked to an onchange event for datepicker
 // Shall we re-write the buildQueryURL function above to generate both API calls? Otherwise, second API call is as below:
-var queryURL2 = "https://api.polygon.io/v1/open-close/" + companysybol + "/" + chosenDate + "?adjusted=true&apiKey=" + apiKey2;
+//var queryURL2 = "https://api.polygon.io/v1/open-close/" + companysybol + "/" + chosenDate + "?adjusted=true&apiKey=" + apiKey2;
 
 
 /**
@@ -47,21 +45,51 @@ var queryURL2 = "https://api.polygon.io/v1/open-close/" + companysybol + "/" + c
  * @param {object} stockData - object containing the API data
  */
 function updatePage(stockData) {
+  console.log("stockData");
   console.log(stockData);
   selectElement = document.querySelector('#stocks');
                   
   output = selectElement.value;
   if (output == 'AAPL')
     outputTxt = "Apple Inc."
+  else if (output == 'MSFT')
+    outputTxt = "Microsoft Corp."
+  else if (output == 'AMZN')
+    outputTxt = "Amazon.com Inc."
+  else if (output == 'NVDA')
+    outputTxt = "NVIDIA Corp."
+  else if (output == 'AVGO')
+    outputTxt = "Broadcom Inc."
+  else if (output == 'META')
+    outputTxt = "Meta Platforms Inc."
+  else if (output == 'TSLA')
+    outputTxt = "Tesla Inc."
+  else if (output == 'GOOGL')
+    outputTxt = "Alphabet Inc. Class A."
+  else if (output == 'COST')
+    outputTxt = "Costco Wholesale Corp."
+  else if (output == 'NFLX')
+    outputTxt = "Netflix Inc."
+  
+  
 
-  $('.card-text0').append(outputTxt)
-  $('.card-text1').append(stockData.c)
-  $('.card-text2').append(stockData.d)
-  $('.card-text3').append(stockData.dp)
-  $('.card-text4').append(stockData.h)
-  $('.card-text5').append(stockData.l)
-  $('.card-text6').append(stockData.o)
-  $('.card-text7').append(stockData.pc)
+
+  $('.card-text0').empty()
+  $('.card-text0').append("Company: "+outputTxt)
+  $('.card-text1').empty()
+  $('.card-text1').append("Current Price: "+stockData.c)
+  $('.card-text2').empty()
+  $('.card-text2').append("Change: "+stockData.d)
+  $('.card-text3').empty()
+  $('.card-text3').append("Percent Change: "+stockData.dp)
+  $('.card-text4').empty()
+  $('.card-text4').append("High price of the day: "+stockData.h)
+  $('.card-text5').empty()
+  $('.card-text5').append("Low price of the day: "+stockData.l)
+  $('.card-text6').empty()
+  $('.card-text6').append("Open price of the day: "+stockData.o)
+  $('.card-text7').empty()
+  $('.card-text7').append("Previous close price: "+stockData.pc)
 }
 
 // CLICK HANDLERS
@@ -69,18 +97,18 @@ function updatePage(stockData) {
 
 // .on("click") function associated with the Search Button
 // $("#btn-primary").on("click", function (event) {
-  $("#stocks").on("change", function (event) {
+  $("#ddl").change(function () {
+    alert($(this).val());
+});
+$("#stocks").on("change", function (event) {
     // DEVELOP: local storage for every stock picked and add to an array to make a fancy "stocks you looked at" card/div
   // This line allows us to take advantage of the HTML "submit" property
   // This way we can hit enter on the keyboard and it registers the search
   // (in addition to clicks). Prevents the page from reloading on form submit.
   event.preventDefault();
-
-  // input = $("#search-input")
-  //   .val()
-  //   .trim();
+  console.log("iiii")
   input = $(event.target).val();
-console.log(input);
+  console.log(input);
   // Build the query URL for the Fetch request to the API
   var queryURL = buildQueryURL(input);
 
@@ -118,11 +146,10 @@ console.log(input);
     .then(updatePage);
 });
 
-function pageOnLoad(input){
+function pageOnLoad(companysybol){
   // Build the query URL for the Fetch request to the API
-  var queryURL = buildQueryURL(input);
+  var queryURL = buildQueryURL(companysybol);
   console.log(queryURL);
-
   // Make the Fetch request to the API - GETs the JSON data at the queryURL.
   // The data then gets passed as an argument to the updatePage function
   fetch(queryURL)
