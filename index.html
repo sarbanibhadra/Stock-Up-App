@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
 </head>
-<body>
+<body onload="pageOnLoad('London')">
 
     <div class="jumbotron bg-success">
         <h1 class="display-4" id="title"><i class="fa-solid fa-money-bill-trend-up" id="graph"></i> Stock Up <i class="fa-solid fa-coins" id="coins"></i></h1>
@@ -23,8 +23,8 @@
           <form>
             <div class="form-group" >
               <select id="stocks" class="form-select" aria-label="Default select example">
-                <option selected>Stock</option>
-                <option value="1">Apple Inc. </option>
+                <option >Stock</option>
+                <option selected value="AAPL">Apple Inc. </option>
                 <option value="2">Microsoft Corp.</option>
                 <option value="3">Amazon.com Inc.</option>
                 <option value="4">NVIDIA Corp.</option>
@@ -38,22 +38,26 @@
             </div>
             
             <div class="container">
-              <ul>
-                <li><a class="image-button" href="https://icons.veryicon.com/png/o/internet--web/iview-3-x-icons/logo-apple.png"><img src="./assets/images/logoApple.png" alt="Apple"></a></li>
-                <li><a class="image-button" href="https://example.com"><img src="./assets/images/microsoftLogo.png" alt="Microsoft"></a></li>
-                <li><a class="image-button" href="https://example.com"><img src="./assets/images/amazon.png" alt="Amazon"></a></li>
-                <li><a class="image-button" href="https://example.com"><img src="./assets/images/nvidia.png" alt="Image 4"></a></li>
-                <li><a class="image-button" href="https://example.com"><img src="./assets/images/broad.png" alt="Image 5"></a></li>
-              </ul>
-              <ul>
-                <li><a class="image-button" href="https://example.com"><img src="./assets/images/meta.png" alt="Image 6"></a></li>
-                <li><a class="image-button" href="https://example.com"><img src="./assets/images/tesla.png" alt="Image 7"></a></li>
-                <li><a class="image-button" href="https://example.com"><img src="./assets/images/netflix.png" alt="Image 8"></a></li>
-                <li><a class="image-button" href="https://example.com"><img src="./assets/images/costco.png" alt="Image 9"></a></li>
-                <li><a class="image-button" href="https://example.com"><img src="./assets/images/alpha.png" alt="Image 10"></a></li>
-              </ul>
-            </div>
-            
+              <div class="column">
+                  
+                  <ul>
+                      <li><a class="image-button" href="https://icons.veryicon.com/png/o/internet--web/iview-3-x-icons/logo-apple.png"><img src="./assets/images/logoApple.png" alt="Apple"></a></li>
+                      <li><a class="image-button" href="https://example.com"><img src="./assets/images/microsoftLogo.png" alt="Microsoft"></a></li>
+                      <li><a class="image-button" href="https://example.com"><img src="./assets/images/amazon.png" alt="Amazon"></a></li>
+                      <li><a class="image-button" href="https://example.com"><img src="./assets/images/nvidia.png" alt="Image 4"></a></li>
+                      <li><a class="image-button" href="https://example.com"><img src="./assets/images/broad.png" alt="Image 5"></a></li>
+                  </ul>
+              </div>
+              <div class="column">
+                  
+                  <ul>
+                      <li><a class="image-button" href="https://example.com"><img src="./assets/images/meta.png" alt="Image 6"></a></li>
+                      <li><a class="image-button" href="https://example.com"><img src="./assets/images/tesla.png" alt="Image 7"></a></li>
+                      <li><a class="image-button" href="https://example.com"><img src="./assets/images/netflix.png" alt="Image 8"></a></li>
+                      <li><a class="image-button" href="https://example.com"><img src="./assets/images/costco.png" alt="Image 9"></a></li>
+                      <li><a class="image-button" href="https://example.com"><img src="./assets/images/alpha.png" alt="Image 10"></a></li>
+                  </ul>
+              </div>
           </div>
       
 
@@ -61,9 +65,15 @@
               <div class="card" id="stock-data-card">
               
                 <div class="card-body" id="stock-data-card">
-                  <h5 class="card-title"  id="stock-data" >Card title</h5>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                  <h5 class="card-title"  id="stock-data-header" >Quote data for US Stocks</h5>
+                  <p class="card-text0" id="stock-data" >Company: </p>
+                  <p class="card-text1" id="stock-data" >Current Price: </p>
+                  <p class="card-text2" id="stock-data">Change: </p>
+                  <p class="card-text3" id="stock-data">Percent Change: </p>
+                  <p class="card-text4" id="stock-data">High price of the day: </p>
+                  <p class="card-text5" id="stock-data">Low price of the day: </p>
+                  <p class="card-text6" id="stock-data">Open price of the day: </p>
+                  <p class="card-text7" id="stock-data">Previous close price: </p>
                 </div>
               </div>
               <div class="card" id="stock-data-card" >
