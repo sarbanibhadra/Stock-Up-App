@@ -127,5 +127,8 @@ function pageOnLoad(input){
 
 
 $( function() {
-  $( "#datepicker" ).datepicker();
+  $( "#datepicker" ).datepicker({
+    dateFormat: "yy-mm-dd" // NOTE this actually returns yyyy-mm-dd format
+    }
+  );
 } );
