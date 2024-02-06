@@ -21,6 +21,31 @@ body{
     font-family: 'Alergb(32,32,32)a Sans SC';font-size: 50px;
     margin-left: 600px;
 }
+#navbar-container{
+    background-color: rgb(32,32,32) !important ;
+}
+#search-discription{
+    color: aliceblue;
+    margin-left: 20px;
+}
+#search-bar-container{
+    margin-right: 20px;
+    margin-left: 300px;
+    background-color: #0000006e;
+    width: 600px;
+    margin-bottom: 20px;
+}
+#searchbar{
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+#search-button{
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
 #dropdown-card{
     color: rgb(32,32,32);
     background-color: #09878bc4;
@@ -130,9 +155,10 @@ margin-left: 20px;}
     color:rgba(32, 32, 32, 0.94);
 }
 #historical-data{
+    align-items: center;
     background-color: #09878bc4;
     height: 700px;
-    margin-left: 500px;
+    margin-left: 600px;
     margin-top: 40px;
     margin-bottom: 30px;
     border-radius: 60px;
