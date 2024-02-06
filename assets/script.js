@@ -31,7 +31,7 @@ function buildQueryURL(companysybol) {
   // queryURL is the url we'll use to query the API
   //var queryURL = "https://finnhub.io/api/v1//search?q=apple"  + "&token=" + apiKey;
 
-  var queryURL = "https://finnhub.io/api/v1/quote?symbol=" + companysybol + "&token=" + apiKey2;
+  var queryURL = "https://finnhub.io/api/v1/quote?symbol=" + companysybol + "&token=" + apiKey;
   
   return queryURL;
 }
