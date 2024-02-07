@@ -10,7 +10,7 @@
 [Stock Up GitHub Repo](https://github.com/sarbanibhadra/Project1)
 
 ## Deployed Link
-TBA
+[Stock Up GitHub Deployed](https://sarbanibhadra.github.io/Project1)
 
 ## Project Description
 **Stock Up** is a user-friendly Financial Ticker Stock Checker designed to keep users updated with real-time stock information. Leveraging API calls, the web application simplifies the process of monitoring stock prices, empowering investors and traders to make informed decisions in the dynamic world of finance.
@@ -53,8 +53,8 @@ TBA
 
 ## APIs
 **Financial APIs**
-- **API 1:** [Finnhub](link)
-- **API 2:** [Polygon](link)
+- **API 1:** [Finnhub](https://finnhub.io)
+- **API 2:** [Polygon](https://api.polygon.io)
 
 ## Deployment
 - GitHub (For hosting and version control)
