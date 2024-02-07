@@ -3,7 +3,7 @@
  * @returns {string} URL for the API based on form inputs
  */
 function buildQueryURLCurrent(companysybol) {
-  var apiKey= "cmv4ch1r01qog1iu9gogcmv4ch1r01qog1iu9gp0"
+  var apiKey= ""
   // queryURL is the url we'll use to query the API
   var queryURL = "https://finnhub.io/api/v1/quote?symbol=" + companysybol + "&token=" + apiKey;
   return queryURL;
