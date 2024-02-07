@@ -135,7 +135,7 @@ margin-left: 20px;
 }
 
 .image-button {
-    display: inline-block; /* Change to inline-block for better alignment */
+    display: inline-block; 
     text-align: center;
     padding: 20px;
 }
