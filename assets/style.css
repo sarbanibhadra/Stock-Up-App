@@ -173,4 +173,24 @@ img {
     cursor: pointer;
 }
 
+.container2 {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+  
+}
 
+.container2 ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.container2 li {
+    margin: 0 20px; 
+}
+
+.container2 img {
+    max-width: 50px;
+    padding-top: 60%;
+}
