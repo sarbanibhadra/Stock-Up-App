@@ -1,5 +1,5 @@
 var historyCard = $("#stock-data-card-H")
-
+var historicData = localStorage.getItem("historyData") ? JSON.parse(localStorage.getItem("historyData")): null
 
 /**
  * pulls information from the form and build the query URL
@@ -31,40 +31,39 @@ function buildQueryURLHistory(companysybol, chosenDate) {
 //Second API call for historic stock data - needs to linked to an onchange event for datepicker
 // Shall we re-write the buildQueryURL function above to generate both API calls? Otherwise, second API call is as below:
 //var queryURL2 = "https://api.polygon.io/v1/open-close/" + companysybol + "/" + chosenDate + "?adjusted=true&apiKey=" + apiKey2;
-
-
 /**
  * takes API data (JSON/object) and turns it into elements on the page
  * @param {object} stockData - object containing the API data
  */
 function updateStockDataCurrent(stockData) {
   console.log(stockData);
-  selectElement = document.querySelector('#stocks');
-                  
-  output = selectElement.value;
-  if (output == 'AAPL')
-    outputTxt = "Apple Inc."
-  else if (output == 'MSFT')
-    outputTxt = "Microsoft Corp."
-  else if (output == 'AMZN')
-    outputTxt = "Amazon.com Inc."
-  else if (output == 'NVDA')
-    outputTxt = "NVIDIA Corp."
-  else if (output == 'AVGO')
-    outputTxt = "Broadcom Inc."
-  else if (output == 'META')
-    outputTxt = "Meta Platforms Inc."
-  else if (output == 'TSLA')
-    outputTxt = "Tesla Inc."
-  else if (output == 'GOOGL')
-    outputTxt = "Alphabet Inc. Class A."
-  else if (output == 'COST')
-    outputTxt = "Costco Wholesale Corp."
-  else if (output == 'NFLX')
-    outputTxt = "Netflix Inc."
+  historicData && renderHistoricData() //short circuit
+  selectElement = document.querySelector('#stocks');                  
+  currentCompany = selectElement.value;
+
+  if (currentCompany == 'AAPL')
+    currentCompanyTxt = "Apple Inc."
+  else if (currentCompany == 'MSFT')
+    currentCompanyTxt = "Microsoft Corp."
+  else if (currentCompany == 'AMZN')
+    currentCompanyTxt = "Amazon.com Inc."
+  else if (currentCompany == 'NVDA')
+    currentCompanyTxt = "NVIDIA Corp."
+  else if (currentCompany == 'AVGO')
+    currentCompanyTxt = "Broadcom Inc."
+  else if (currentCompany == 'META')
+    currentCompanyTxt = "Meta Platforms Inc."
+  else if (currentCompany == 'TSLA')
+    currentCompanyTxt = "Tesla Inc."
+  else if (currentCompany == 'GOOGL')
+    currentCompanyTxt = "Alphabet Inc. Class A."
+  else if (currentCompany == 'COST')
+    currentCompanyTxt = "Costco Wholesale Corp."
+  else if (currentCompany == 'NFLX')
+    currentCompanyTxt = "Netflix Inc."
   
   $('.card-text0').empty()
-  $('.card-text0').append("Company: "+outputTxt)
+  $('.card-text0').append("Company: "+currentCompanyTxt)
   $('.card-text1').empty()
   $('.card-text1').append("Current Price: "+stockData.c)
   $('.card-text2').empty()
@@ -86,6 +85,16 @@ function updateStockDataCurrent(stockData) {
   carHeader.attr("id", "stock-data-header")
   carHeader.append("Daily Open Close")     
   historyCard.append(carHeader)
+  $('#datepicker').datepicker('setDate', null);
+
+  historicData = {currentCompanyTxt, ...stockData} //spread operator
+  console.log("historicData: ", historicData);
+  localStorage.setItem("historyData", JSON.stringify(historicData))
+}
+
+function renderHistoricData(){
+
+  console.log("inside renderHistoricData")
 }
 
 
@@ -129,6 +138,12 @@ $("#stocks").on("change", function (event) {
     })
     .then(updateStockDataCurrent);
 });
+
+function updateStockChecker(pastStockData) {
+  console.log(pastStockData)
+  if pastStockData.status == "OK"
+  updateStockDataHistory(pastStockData)
+}
 
 /**
  * takes API data (JSON/object) and turns it into elements on the page
@@ -199,34 +214,8 @@ function updateStockDataHistory(pastStockData) {
   historyCard.append(carHeader, afterHours, close, high, low, open, preMarket, status, volume)
   console.log(historyCard)
   
-
-  // "afterHours": 322.1,
-  // "close": 325.12,
-  // "from": "2023-01-09",
-  // "high": 326.2,
-  // "low": 322.3,
-  // "open": 324.66,
-  // "preMarket": 324.5,
-  // "status": "OK",
-  // "symbol": "AAPL",
-  // "volume": 26122646
-  // $('.card-text0').empty()
-  // $('.card-text0').append("Company: "+outputTxt)
-  // $('.card-text1').empty()
-  // $('.card-text1').append("Current Price: "+stockData.c)
-  // $('.card-text2').empty()
-  // $('.card-text2').append("Change: "+stockData.d)
-  // $('.card-text3').empty()
-  // $('.card-text3').append("Percent Change: "+stockData.dp)
-  // $('.card-text4').empty()
-  // $('.card-text4').append("High price of the day: "+stockData.h)
-  // $('.card-text5').empty()
-  // $('.card-text5').append("Low price of the day: "+stockData.l)
-  // $('.card-text6').empty()
-  // $('.card-text6').append("Open price of the day: "+stockData.o)
-  // $('.card-text7').empty()
-  // $('.card-text7').append("Previous close price: "+stockData.pc)
 }
+
 
 // .on("click") function associated with the Search Button
 $("#datepicker" ).on("change", function(event){
@@ -248,7 +237,7 @@ $("#datepicker" ).on("change", function(event){
     .then(function (response) {
       return response.json();
     })
-    .then(updateStockDataHistory
+    .then(updateStockChecker
       //THIS WOULD BE WHERE IF STATEMENT SITS TO CATCH ERROR CAUSED BY BEING OUTSIDE DATE PARAMETERS
       );
     
