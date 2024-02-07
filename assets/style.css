@@ -1,49 +1,51 @@
-body{
-    margin: 0px;
-    padding:0px;
-    background-color: rgb(32,32,32) !important;
-    font-family: 'Alergb(32,32,32)a Sans SC';font-size: 22px;
- 
-
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(32, 32, 32) !important;
+    font-family: 'Alergb(32, 32, 32) a Sans SC';
+    font-size: 22px;
 }
-#title{ text-align: center;
+
+#title {
+    text-align: center;
     color: rgba(240, 248, 255, 0.87);
-    font-family: 'Alergb(32,32,32)a Sans SC';font-size: 125px;
-    margin-top: 10px;
-    margin-right: 700px;
+    font-family: 'Alergb(32, 32, 32) a Sans SC';
+    font-size: 125px;
+    margin-top: 1%;
+    margin-right: 30%;
 }
-
 #quote{
     text-align: center;
     color: rgb(255, 255, 255);
     font-weight: 600;
     margin-bottom: 0px;
     font-family: 'Alergb(32,32,32)a Sans SC';font-size: 50px;
-    margin-left: 600px;
+    margin-left: 35%;
 }
 #navbar-container{
     background-color: rgb(32,32,32) !important ;
 }
 #search-discription{
     color: aliceblue;
-    margin-left: 20px;
+    margin-left: 5%;
 }
 #search-bar-container{
-    margin-right: 20px;
-    margin-left: 300px;
+    margin-right: 2%;
+    margin-left: 30%;
     background-color: #0000006e;
     width: 600px;
-    margin-bottom: 20px;
+    margin-bottom: 2%;
 }
 #searchbar{
     margin-top: 10px;
-    margin-right: 10px;
+    margin-right: 2%;
+    margin-left: 10px;
 }
 
 #search-button{
     margin-top: 10px;
-    margin-right: 10px;
-    margin-left: 10px;
+    margin-right: 2%;
+    margin-left: 2%;
 }
 
 #dropdown-card{
@@ -56,10 +58,12 @@ body{
 
 #searchbar-title{
     text-align: center;
-    font-size: 70px;
+    font-size: 50px;
     font-weight: 600;
     font-family: 'Alergb(32,32,32)a Sans SC';
-    margin-right: 1000px;
+    margin-right: 50%;
+    color: #ffffff;
+
 }
 #stocks{color:rgb(32,32,32);
 background-color: #00ffff6e;
@@ -67,6 +71,7 @@ font-size: 25px;
 font-weight: 600;
 font-family: 'Alergb(32,32,32)a Sans SC';
 text-align: center;
+cursor: pointer;
 }
 
 
@@ -74,7 +79,7 @@ text-align: center;
     background-color: #00ffff6e;
 text-align: center;
 border-radius: 10px;
-margin-top: 10px;
+margin-top: 2%;
 font-family: 'Alergb(32,32,32)a Sans SC';font-size: 22px;
 margin-top: 10px;
 margin-bottom: 10px;
@@ -87,7 +92,7 @@ margin-left: 20px;}
 }
 
     #submit-btn{
-margin-bottom: 10px;
+margin-bottom: 2%;
 color :aliceblue;
 font-family: 'Alergb(32,32,32)a Sans SC';font-size: 22px;
 font-weight: 600;}
@@ -96,9 +101,9 @@ font-weight: 600;}
      background-color: #09878bc4;
      font-weight: 800;
      border-radius: 20px ;  
-     margin-top: 250px;
-     margin-bottom: 20px;
-     margin-left: 25px;
+     margin-top: 30%;
+     margin-bottom: 4%;
+     margin-left: 5%;
     }
 
     #stock-data-card{
@@ -107,7 +112,7 @@ font-weight: 600;}
         font-weight: 800;
         border-radius: 20px ;  
         font-family: 'Alergb(32,32,32)a Sans SC';font-size: 22px;
-        margin-left: 20px;
+        margin-left: 4%;
     }
     #stock-data-header{
         margin-top: 30px;
@@ -132,8 +137,8 @@ font-weight: 600;}
     }
 
     #intro-text{
-        margin-top: 20px;
-        margin-left: 200px;
+        margin-top: 4%;
+        margin-left: 25%;
         font-size: 40px;
     font-weight: 600;}
 
@@ -149,7 +154,7 @@ font-weight: 600;}
     #moneybag{
         font-size: 90;
     color: rgba(210, 105, 30, 0.76);
-margin-left: 20px;}
+margin-left: 4%;}
 
 #magnifying-glass{
     color:rgba(32, 32, 32, 0.94);
@@ -158,9 +163,9 @@ margin-left: 20px;}
     align-items: center;
     background-color: #09878bc4;
     height: 700px;
-    margin-left: 600px;
-    margin-top: 40px;
-    margin-bottom: 30px;
+    margin-left: 50%;
+    margin-top: 8%;
+    margin-bottom: 6%;
     border-radius: 60px;
 }
 
