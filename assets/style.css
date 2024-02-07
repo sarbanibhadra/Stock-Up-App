@@ -54,8 +54,11 @@ font-family: 'Alergb(32,32,32)a Sans SC';font-size: 22px;
 margin-top: 10px;
 margin-bottom: 10px;
 margin-left: 20px;}
+
 #date{
     margin-left: 20px;
+    color:#6bf403;
+
 }
 
     #submit-btn{
