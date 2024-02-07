@@ -1,9 +1,12 @@
+var historyCard = $("#stock-data-card-H")
+
+
 /**
  * pulls information from the form and build the query URL
  * @returns {string} URL for the API based on form inputs
  */
 function buildQueryURLCurrent(companysybol) {
-  var apiKey= ""
+  var apiKey= "cmv4ch1r01qog1iu9gogcmv4ch1r01qog1iu9gp0"
   // queryURL is the url we'll use to query the API
   var queryURL = "https://finnhub.io/api/v1/quote?symbol=" + companysybol + "&token=" + apiKey;
   return queryURL;
@@ -14,9 +17,13 @@ function buildQueryURLCurrent(companysybol) {
  * @returns {string} URL for the API based on form inputs
  */
 function buildQueryURLHistory(companysybol, chosenDate) {
-  var apiKey= ""
+  var apiKey= "AZ9XtTlMv4BXEyii4QAqKxFDO4PujECE"
+  console.log(companysybol +"  "+chosenDate);
   // queryURL is the url we'll use to query the API
   var queryURL = "https://api.polygon.io/v1/open-close/" + companysybol + "/" + chosenDate + "?adjusted=true&apiKey=" + apiKey;
+  console.log(queryURL)
+  var queryURL1 = "https://api.polygon.io/v1/open-close/AAPL/2023-01-09?adjusted=true&apiKey=AZ9XtTlMv4BXEyii4QAqKxFDO4PujECE"
+  console.log(queryURL1)
   return queryURL;
 }
 
@@ -72,6 +79,13 @@ function updateStockDataCurrent(stockData) {
   $('.card-text6').append("Open price of the day: "+stockData.o)
   $('.card-text7').empty()
   $('.card-text7').append("Previous close price: "+stockData.pc)
+
+  historyCard.empty()
+  var carHeader = $("<h5>")
+  carHeader.addClass("card-title")
+  carHeader.attr("id", "stock-data-header")
+  carHeader.append("Daily Open Close")     
+  historyCard.append(carHeader)
 }
 
 
@@ -96,31 +110,82 @@ $("#stocks").on("change", function (event) {
  * takes API data (JSON/object) and turns it into elements on the page
  * @param {object} stockData - object containing the API data
  */
-function updateStockDataPast(stockData) {
-  console.log(stockData);
-  // selectElement = document.querySelector('#stocks');                
-  // output = selectElement.value;
-  // if (output == 'AAPL')
-  //   outputTxt = "Apple Inc."
-  // else if (output == 'MSFT')
-  //   outputTxt = "Microsoft Corp."
-  // else if (output == 'AMZN')
-  //   outputTxt = "Amazon.com Inc."
-  // else if (output == 'NVDA')
-  //   outputTxt = "NVIDIA Corp."
-  // else if (output == 'AVGO')
-  //   outputTxt = "Broadcom Inc."
-  // else if (output == 'META')
-  //   outputTxt = "Meta Platforms Inc."
-  // else if (output == 'TSLA')
-  //   outputTxt = "Tesla Inc."
-  // else if (output == 'GOOGL')
-  //   outputTxt = "Alphabet Inc. Class A."
-  // else if (output == 'COST')
-  //   outputTxt = "Costco Wholesale Corp."
-  // else if (output == 'NFLX')
-  //   outputTxt = "Netflix Inc."
+function updateStockDataHistory(pastStockData) {
+  console.log(pastStockData);
+  selectElement = document.querySelector('#stocks');                
+  output = selectElement.value;
+
+  if (output == 'AAPL')
+    outputTxt = "Apple Inc."
+  else if (output == 'MSFT')
+    outputTxt = "Microsoft Corp."
+  else if (output == 'AMZN')
+    outputTxt = "Amazon.com Inc."
+  else if (output == 'NVDA')
+    outputTxt = "NVIDIA Corp."
+  else if (output == 'AVGO')
+    outputTxt = "Broadcom Inc."
+  else if (output == 'META')
+    outputTxt = "Meta Platforms Inc."
+  else if (output == 'TSLA')
+    outputTxt = "Tesla Inc."
+  else if (output == 'GOOGL')
+    outputTxt = "Alphabet Inc. Class A."
+  else if (output == 'COST')
+    outputTxt = "Costco Wholesale Corp."
+  else if (output == 'NFLX')
+    outputTxt = "Netflix Inc."
   
+  
+  //<h5 class="card-title"  id="stock-data-header" >Daily Open Close</h5>
+  var carHeader = $("<h5>")
+  carHeader.addClass("card-title")
+  carHeader.attr("id", "stock-data-header")
+  carHeader.append("Daily Open Close")     
+
+  var afterHours = $("<p>")
+  afterHours.append("AfterHours: "+pastStockData.afterHours);
+  afterHours.attr("id", "stock-data")
+
+  var close = $("<p>")
+  close.append("Close: "+pastStockData.close);
+  close.attr("id", "stock-data")
+
+  var high = $("<p>")
+  high.append("High: "+pastStockData.high);
+  high.attr("id", "stock-data")
+
+  var low = $("<p>")
+  low.append("Low: "+pastStockData.low);
+  low.attr("id", "stock-data")
+
+  var open = $("<p>")
+  open.append("Open: "+pastStockData.open);
+  open.attr("id", "stock-data")
+
+  var preMarket = $("<p>")
+  preMarket.append("PreMarket: "+pastStockData.preMarket);
+  preMarket.attr("id", "stock-data")
+
+  var volume = $("<p>")
+  volume.append("Volume: "+pastStockData.volume);
+  volume.attr("id", "stock-data")
+
+  historyCard.empty()
+  historyCard.append(carHeader, afterHours, close, high, low, open, preMarket, status, volume)
+  console.log(historyCard)
+  
+
+  // "afterHours": 322.1,
+  // "close": 325.12,
+  // "from": "2023-01-09",
+  // "high": 326.2,
+  // "low": 322.3,
+  // "open": 324.66,
+  // "preMarket": 324.5,
+  // "status": "OK",
+  // "symbol": "AAPL",
+  // "volume": 26122646
   // $('.card-text0').empty()
   // $('.card-text0').append("Company: "+outputTxt)
   // $('.card-text1').empty()
@@ -151,9 +216,6 @@ $("#datepicker" ).on("change", function(event){
   selectElement = document.querySelector('#stocks');  
   companysymbol = selectElement.value;
 
-  // input will be fetched from storage data
-  input = "Need to fetch from storage data"
-
   // Build the query URL for the Fetch request to the the API
   var queryURL = buildQueryURLHistory(companysymbol, chosenDate);
 
@@ -163,7 +225,7 @@ $("#datepicker" ).on("change", function(event){
     .then(function (response) {
       return response.json();
     })
-    .then(updateStockDataPast);
+    .then(updateStockDataHistory);
 });
 
 function pageOnLoad(companysybol){
