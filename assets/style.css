@@ -25,6 +25,9 @@ body {
 #navbar-container{
     background-color: rgb(32,32,32) !important ;
 }
+#main-container {
+    background-color: #09878bc4;
+}
 #search-discription{
     color: aliceblue;
     margin-left: 5%;
@@ -74,6 +77,10 @@ text-align: center;
 cursor: pointer;
 }
 
+#company-logo-container{
+    margin-top: 20px;
+}
+
 
 #datepicker{color: rgb(0, 0, 0);
     background-color: #00ffff6e;
@@ -84,10 +91,11 @@ font-family: 'Alergb(32,32,32)a Sans SC';font-size: 22px;
 margin-top:2%;
 margin-bottom:2%;
 margin-left: 4%;
-width: 90%;}
+width: 100%;}
 #date{
     margin-left: 4%;
     width: 30%;
+    color:aliceblue;
 }
 
     #submit-btn{
@@ -100,23 +108,33 @@ font-weight: 600;}
      background-color: #09878bc4;
      font-weight: 800;
      border-radius: 20px ;  
-     margin-top: 30%;
+     margin-top: 10%;
      margin-bottom: 4%;
      margin-left: 5%;
+     margin-right: 5%;
     }
 
     #stock-data-card{
         height: 500px;
-        background-color: #09878bc4;
+        background-color: #000a0ac4;
         font-weight: 800;
         border-radius: 20px ;  
         font-family: 'Alergb(32,32,32)a Sans SC';font-size: 22px;
         margin-left: 4%;
+        margin-right: 4%;
     }
     #stock-data{
-        margin-top: 6%;
+        margin-top: 30px;
         font-family: 'Alergb(32,32,32)a Sans SC';font-size: 28px;
-        color:rgb(32,32,32);
+        color:#6bf403;
+        font-weight: 400;
+        text-decoration: underline;
+    }
+
+    #stock-data{
+        margin-top: 15px;
+        font-family: 'Alergb(32,32,32)a Sans SC';font-size: 20px;
+        color:rgb(231, 231, 14);
         font-weight: 400;
     }
 
@@ -158,3 +176,49 @@ margin-left: 4%;}
     margin-bottom: 2%;
 margin-left:4%;
 }
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.image-button {
+    display: block;
+    text-align: center;
+}
+
+.container ul {
+    display: flex;
+    justify-content: space-between; 
+    flex-wrap: wrap; 
+    list-style: none; 
+    padding: 0;
+  }
+  
+  .container ul li {
+    flex: 0 0 calc(20% - 10px);
+    margin-bottom: 20px; 
+  }
+  
+  .container ul li img {
+    width: 100%; 
+    height: auto; 
+  }
+  
+
+.logo-image {
+    width: 50x; 
+    height: 50px; 
+    object-fit:contain; 
+}
+
+img {
+    max-width: 50%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+

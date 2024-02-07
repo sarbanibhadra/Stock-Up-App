@@ -1,10 +1,10 @@
 # Project1: Stock Up
 
 ## Team Members
-- Corinne Borgeaud (Backend)
-- Sarbani Das (Backend)
-- Marta Markowska (Frontend)
-- Yaseen Fehad (Frontend)
+- Corinne Borgeaud
+- Sarbani Das
+- Marta Markowska
+- Yaseen Fehad
 
 ## GitHub Project Repo Link
 [Stock Up GitHub Repo](https://github.com/sarbanibhadra/Project1)
