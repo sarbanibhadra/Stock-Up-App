@@ -94,15 +94,6 @@ function updateStockDataCurrent(stockData) {
   localStorage.setItem("historyData", JSON.stringify(historicData))
 }
 
-function renderHistoricData(){
-
-  console.log("inside renderHistoricData")
-}
-
-function renderHistoricData(){
-
-  console.log("inside renderHistoricData")
-}
 
 function renderHistoricData(){
   console.log("inside renderHistoricData", historicData.currentCompanyTxt)
@@ -139,7 +130,7 @@ else if (currentCompany == 'NFLX')
   carHeader.append("Last Stock checked")
 
   var lastStockName = $("<p>")
-  lastStockName.append(historicData.currentCompanyTxt);
+  lastStockName.append(historicData.currentCompanyTxt+" ("+currentCompany+")");
   lastStockName.attr("id", "stock-data")
 
   var lastStockImg = $("<img>")
@@ -147,8 +138,9 @@ else if (currentCompany == 'NFLX')
   lastStockImg.attr("src", src)
   lastCard.empty()
   lastCard.append(carHeader, lastStockName, lastStockImg)
-
 }
+
+
 // .on("change") function associated with the Drop Down list
 $("#stocks").on("change", function (event) {
   // DEVELOP: local storage for every stock picked and add to an array to make a fancy "stocks you looked at" card/div
@@ -156,28 +148,22 @@ $("#stocks").on("change", function (event) {
   input = $(event.target).val();
   console.log(input);
   
-  //LOCAL STORAGE CODE BELOW note added class .last-stock-display to the correct <p> element in right hand card
-  //this now needs to persist on selection of new stock, so what is the action that clears it? Where does it have to move?
-  //Do we want to use the Company full name rather than the stock symbol? Shall we utlise the code in updateStockDataCurrent function i.e. if (output == 'COST') outputTxt = "Costco Wholesale Corp." etc?
-  //localStorage.clear();
-  var lastChosenStockSymbol = localStorage.getItem("chosenStock");
-  console.log( 'previous stock', typeof lastChosenStockSymbol)
-  if (lastChosenStockSymbol){
-  localStorage.setItem('previousStock', lastChosenStockSymbol)
-    $(".last-stock-display").text(lastChosenStockSymbol);
+
+  // var lastChosenStockSymbol = localStorage.getItem("chosenStock");
+  // console.log( 'previous stock', typeof lastChosenStockSymbol)
+  // if (lastChosenStockSymbol){
+  // localStorage.setItem('previousStock', lastChosenStockSymbol)
+  //   $(".last-stock-display").text(lastChosenStockSymbol);
   
-  }
-  // if it exist !==="" lastChosenStockSymbol
-  // take lostChosenStockSymbol and store it in a new localStorage.setItem('previousStock', lastChosenStockSymbol)
+  // }
+  
+  // localStorage.setItem("chosenStock", input);
 
-
-  localStorage.setItem("chosenStock", input);
-
-  //DOES THE ABOVE getItem need to sit in its own function (example below) or another of the event listeners? 
-  // function recallStockSymbol () {
-  //   var lastChosenStockSymbol = localStorage.getItem("chosenStock");
-  //   console.log(lastChosenStockSymbol + "is your last chosen stock");
-  // };
+  // //DOES THE ABOVE getItem need to sit in its own function (example below) or another of the event listeners? 
+  // // function recallStockSymbol () {
+  // //   var lastChosenStockSymbol = localStorage.getItem("chosenStock");
+  // //   console.log(lastChosenStockSymbol + "is your last chosen stock");
+  // // };
 
   // Build the query URL for the Fetch request to the API
   var queryURL = buildQueryURLCurrent(input);
@@ -225,27 +211,6 @@ function updateStockDataHistory(pastStockData) {
   selectElement = document.querySelector('#stocks');                
   output = selectElement.value;
 
-  // if (output == 'AAPL')
-  //   outputTxt = "Apple Inc."
-  // else if (output == 'MSFT')
-  //   outputTxt = "Microsoft Corp."
-  // else if (output == 'AMZN')
-  //   outputTxt = "Amazon.com Inc."
-  // else if (output == 'NVDA')
-  //   outputTxt = "NVIDIA Corp."
-  // else if (output == 'AVGO')
-  //   outputTxt = "Broadcom Inc."
-  // else if (output == 'META')
-  //   outputTxt = "Meta Platforms Inc."
-  // else if (output == 'TSLA')
-  //   outputTxt = "Tesla Inc."
-  // else if (output == 'GOOGL')
-  //   outputTxt = "Alphabet Inc. Class A."
-  // else if (output == 'COST')
-  //   outputTxt = "Costco Wholesale Corp."
-  // else if (output == 'NFLX')
-  //   outputTxt = "Netflix Inc."
-  
   
   //<h5 class="card-title"  id="stock-data-header" >Daily Open Close</h5>
   var carHeader = $("<h5>")
