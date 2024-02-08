@@ -229,3 +229,20 @@ footer {
     background-color: #275300;
 }
 
+::-webkit-scrollbar {
+    width: 10px; 
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #5e5e5e; 
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #2a5f33; 
+    border-radius: 5px; 
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #218026; 
+  }
+  
