@@ -134,6 +134,13 @@ background-color: #ffffff;
     color: rgb(255, 170, 51);
     font-weight: 400;
     text-align: center;
+    #stock-data-error{
+        margin-top: 15px;
+        font-family: 'Alergb(32,32,32)a Sans SC';font-size: 20px;
+        color:rgb(231, 14, 14);
+        font-weight: 400;
+    }
+
     cursor: default;
 }
 
@@ -209,18 +216,23 @@ body {
     flex-wrap: wrap; 
     list-style: none; 
     padding: 0;
-  }
+      padding: 0 20px;
+}
   
   .container ul li {
     flex: 0 0 calc(20% - 10px);
     margin-top: 60px;
     margin-bottom: 20px; 
-  }
+      justify-content: space-between;
+    padding: 0 20px;
+}
   
   .container ul li img {
     width: 100%; 
     height: auto; 
-  }
+      justify-content: space-between;
+    
+}
   
 
 .logo-image {
