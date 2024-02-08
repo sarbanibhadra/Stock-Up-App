@@ -210,13 +210,12 @@ margin-left: 20px;
     text-align: center;
 }
 
-
-
 .container ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     list-style: none;
+    padding: 0%;
     margin-top: 50px;
     padding: 0 20px;
     width: 100%;
@@ -249,7 +248,7 @@ img {
     height: auto;
     display: block;
     margin: 0 auto;
-    cursor: pointer;  
+    cursor: pointer;
 }
 #footer{
     margin-top: 1%;
