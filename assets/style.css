@@ -190,8 +190,6 @@ margin-left: 20px;
     text-align: center;
 }
 
-
-
 .container ul {
     display: flex;
     flex-wrap: wrap;
@@ -231,7 +229,7 @@ img {
     height: auto;
     display: block;
     margin: 0 auto;
-    cursor: pointer;  
+    cursor: pointer;
 }
 #footer{
     margin-top: 1%;
