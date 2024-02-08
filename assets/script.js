@@ -100,9 +100,18 @@ $("#stocks").on("change", function (event) {
   //this now needs to persist on selection of new stock, so what is the action that clears it? Where does it have to move?
   //Do we want to use the Company full name rather than the stock symbol? Shall we utlise the code in updateStockDataCurrent function i.e. if (output == 'COST') outputTxt = "Costco Wholesale Corp." etc?
   //localStorage.clear();
-  localStorage.setItem("chosenStock", input);
   var lastChosenStockSymbol = localStorage.getItem("chosenStock");
-  $(".last-stock-display").text(lastChosenStockSymbol);
+  console.log( 'previous stock', typeof lastChosenStockSymbol)
+  if (lastChosenStockSymbol){
+  localStorage.setItem('previousStock', lastChosenStockSymbol)
+    $(".last-stock-display").text(lastChosenStockSymbol);
+  
+  }
+  // if it exist !==="" lastChosenStockSymbol
+  // take lostChosenStockSymbol and store it in a new localStorage.setItem('previousStock', lastChosenStockSymbol)
+
+
+  localStorage.setItem("chosenStock", input);
 
   //DOES THE ABOVE getItem need to sit in its own function (example below) or another of the event listeners? 
   // function recallStockSymbol () {
