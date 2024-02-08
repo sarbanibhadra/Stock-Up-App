@@ -1,4 +1,6 @@
 var historyCard = $("#stock-data-card-H")
+var historicData = localStorage.getItem("historyData") ? JSON.parse(localStorage.getItem("historyData")): null
+
 
 
 /**
@@ -31,40 +33,39 @@ function buildQueryURLHistory(companysybol, chosenDate) {
 //Second API call for historic stock data - needs to linked to an onchange event for datepicker
 // Shall we re-write the buildQueryURL function above to generate both API calls? Otherwise, second API call is as below:
 //var queryURL2 = "https://api.polygon.io/v1/open-close/" + companysybol + "/" + chosenDate + "?adjusted=true&apiKey=" + apiKey2;
-
-
 /**
  * takes API data (JSON/object) and turns it into elements on the page
  * @param {object} stockData - object containing the API data
  */
 function updateStockDataCurrent(stockData) {
   console.log(stockData);
-  selectElement = document.querySelector('#stocks');
-                  
-  output = selectElement.value;
-  if (output == 'AAPL')
-    outputTxt = "Apple Inc."
-  else if (output == 'MSFT')
-    outputTxt = "Microsoft Corp."
-  else if (output == 'AMZN')
-    outputTxt = "Amazon.com Inc."
-  else if (output == 'NVDA')
-    outputTxt = "NVIDIA Corp."
-  else if (output == 'AVGO')
-    outputTxt = "Broadcom Inc."
-  else if (output == 'META')
-    outputTxt = "Meta Platforms Inc."
-  else if (output == 'TSLA')
-    outputTxt = "Tesla Inc."
-  else if (output == 'GOOGL')
-    outputTxt = "Alphabet Inc. Class A."
-  else if (output == 'COST')
-    outputTxt = "Costco Wholesale Corp."
-  else if (output == 'NFLX')
-    outputTxt = "Netflix Inc."
+  historicData && renderHistoricData() //short circuit
+  selectElement = document.querySelector('#stocks');                  
+  currentCompany = selectElement.value;
+
+  if (currentCompany == 'AAPL')
+    currentCompanyTxt = "Apple Inc."
+  else if (currentCompany == 'MSFT')
+    currentCompanyTxt = "Microsoft Corp."
+  else if (currentCompany == 'AMZN')
+    currentCompanyTxt = "Amazon.com Inc."
+  else if (currentCompany == 'NVDA')
+    currentCompanyTxt = "NVIDIA Corp."
+  else if (currentCompany == 'AVGO')
+    currentCompanyTxt = "Broadcom Inc."
+  else if (currentCompany == 'META')
+    currentCompanyTxt = "Meta Platforms Inc."
+  else if (currentCompany == 'TSLA')
+    currentCompanyTxt = "Tesla Inc."
+  else if (currentCompany == 'GOOGL')
+    currentCompanyTxt = "Alphabet Inc. Class A."
+  else if (currentCompany == 'COST')
+    currentCompanyTxt = "Costco Wholesale Corp."
+  else if (currentCompany == 'NFLX')
+    currentCompanyTxt = "Netflix Inc."
   
   $('.card-text0').empty()
-  $('.card-text0').append("Company: "+outputTxt)
+  $('.card-text0').append("Company: "+currentCompanyTxt)
   $('.card-text1').empty()
   $('.card-text1').append("Current Price: "+stockData.c)
   $('.card-text2').empty()
@@ -86,6 +87,57 @@ function updateStockDataCurrent(stockData) {
   carHeader.attr("id", "stock-data-header")
   carHeader.append("Daily Open Close")     
   historyCard.append(carHeader)
+  $('#datepicker').datepicker('setDate', null);
+
+  historicData = {currentCompanyTxt, currentCompany, ...stockData} //spread operator
+  console.log("historicData: ", historicData);
+  localStorage.setItem("historyData", JSON.stringify(historicData))
+}
+
+
+function renderHistoricData(){
+  console.log("inside renderHistoricData", historicData.currentCompanyTxt)
+  var src = "";
+
+var currentCompany = historicData.currentCompany;
+if (currentCompany == 'AAPL')
+  src="./assets/images/logoApple.png"
+else if (currentCompany == 'MSFT')
+  src="./assets/images/microsoftLogo.png"
+else if (currentCompany == 'AMZN')
+  src="./assets/images/amazon.png"
+else if (currentCompany == 'NVDA')
+  src="./assets/images/nvidia.png" 
+else if (currentCompany == 'AVGO')
+  src="./assets/images/broad.png"
+else if (currentCompany == 'META')
+  src="./assets/images/meta.png"
+else if (currentCompany == 'TSLA')
+  src="./assets/images/tesla.png"
+else if (currentCompany == 'GOOGL')
+  src = ""
+else if (currentCompany == 'COST')
+  src="./assets/images/costco.png"
+else if (currentCompany == 'NFLX')
+  src="./assets/images/netflix.png"
+ 
+
+  var lastCard = $("#stock-data-card-L")
+  //<img src="./assets/images/microsoftLogo.png" alt="Microsoft" class="image-button">
+  var carHeader = $("<h5>")
+  carHeader.addClass("card-title")
+  carHeader.attr("id", "stock-data-header")
+  carHeader.append("Last Stock checked")
+
+  var lastStockName = $("<p>")
+  lastStockName.append(historicData.currentCompanyTxt+"   ("+currentCompany+")");
+  lastStockName.attr("id", "stock-data")
+
+  var lastStockImg = $("<img>")
+  lastStockImg.addClass("image-button")
+  lastStockImg.attr("src", src)
+  lastCard.empty()
+  lastCard.append(carHeader, lastStockName, lastStockImg)
 }
 
 
@@ -96,28 +148,22 @@ $("#stocks").on("change", function (event) {
   input = $(event.target).val();
   console.log(input);
   
-  //LOCAL STORAGE CODE BELOW note added class .last-stock-display to the correct <p> element in right hand card
-  //this now needs to persist on selection of new stock, so what is the action that clears it? Where does it have to move?
-  //Do we want to use the Company full name rather than the stock symbol? Shall we utlise the code in updateStockDataCurrent function i.e. if (output == 'COST') outputTxt = "Costco Wholesale Corp." etc?
-  //localStorage.clear();
-  var lastChosenStockSymbol = localStorage.getItem("chosenStock");
-  console.log( 'previous stock', typeof lastChosenStockSymbol)
-  if (lastChosenStockSymbol){
-  localStorage.setItem('previousStock', lastChosenStockSymbol)
-    $(".last-stock-display").text(lastChosenStockSymbol);
+
+  // var lastChosenStockSymbol = localStorage.getItem("chosenStock");
+  // console.log( 'previous stock', typeof lastChosenStockSymbol)
+  // if (lastChosenStockSymbol){
+  // localStorage.setItem('previousStock', lastChosenStockSymbol)
+  //   $(".last-stock-display").text(lastChosenStockSymbol);
   
-  }
-  // if it exist !==="" lastChosenStockSymbol
-  // take lostChosenStockSymbol and store it in a new localStorage.setItem('previousStock', lastChosenStockSymbol)
+  // }
+  
+  // localStorage.setItem("chosenStock", input);
 
-
-  localStorage.setItem("chosenStock", input);
-
-  //DOES THE ABOVE getItem need to sit in its own function (example below) or another of the event listeners? 
-  // function recallStockSymbol () {
-  //   var lastChosenStockSymbol = localStorage.getItem("chosenStock");
-  //   console.log(lastChosenStockSymbol + "is your last chosen stock");
-  // };
+  // //DOES THE ABOVE getItem need to sit in its own function (example below) or another of the event listeners? 
+  // // function recallStockSymbol () {
+  // //   var lastChosenStockSymbol = localStorage.getItem("chosenStock");
+  // //   console.log(lastChosenStockSymbol + "is your last chosen stock");
+  // // };
 
   // Build the query URL for the Fetch request to the API
   var queryURL = buildQueryURLCurrent(input);
@@ -130,6 +176,32 @@ $("#stocks").on("change", function (event) {
     .then(updateStockDataCurrent);
 });
 
+function updateStockChecker(pastStockData) {
+  console.log(pastStockData)
+  var carHeader = $("<h5>")
+    carHeader.addClass("card-title")
+    carHeader.attr("id", "stock-data-header")
+    carHeader.append("Daily Open Close")
+    var msgE = $("<p>")
+    msgE.attr("id", "stock-data-error")
+
+  if (pastStockData.status == "OK"){
+    updateStockDataHistory(pastStockData)
+  } else if (pastStockData.status == "ERROR"){
+    console.log(pastStockData.status)
+    message = "Error: You've exceeded the maximum requests per minute, please wait!";
+    historyCard.empty()
+    msgE.append(message)
+    historyCard.append(carHeader, msgE)
+  } else if (pastStockData.status == "NOT_FOUND"){
+    message = "Error: Market Close, Try a week day!";
+    historyCard.empty()
+    msgE.append(message)
+    historyCard.append(carHeader, msgE)
+  }
+
+}
+
 /**
  * takes API data (JSON/object) and turns it into elements on the page
  * @param {object} stockData - object containing the API data
@@ -139,27 +211,6 @@ function updateStockDataHistory(pastStockData) {
   selectElement = document.querySelector('#stocks');                
   output = selectElement.value;
 
-  if (output == 'AAPL')
-    outputTxt = "Apple Inc."
-  else if (output == 'MSFT')
-    outputTxt = "Microsoft Corp."
-  else if (output == 'AMZN')
-    outputTxt = "Amazon.com Inc."
-  else if (output == 'NVDA')
-    outputTxt = "NVIDIA Corp."
-  else if (output == 'AVGO')
-    outputTxt = "Broadcom Inc."
-  else if (output == 'META')
-    outputTxt = "Meta Platforms Inc."
-  else if (output == 'TSLA')
-    outputTxt = "Tesla Inc."
-  else if (output == 'GOOGL')
-    outputTxt = "Alphabet Inc. Class A."
-  else if (output == 'COST')
-    outputTxt = "Costco Wholesale Corp."
-  else if (output == 'NFLX')
-    outputTxt = "Netflix Inc."
-  
   
   //<h5 class="card-title"  id="stock-data-header" >Daily Open Close</h5>
   var carHeader = $("<h5>")
@@ -196,37 +247,11 @@ function updateStockDataHistory(pastStockData) {
   volume.attr("id", "stock-data")
 
   historyCard.empty()
-  historyCard.append(carHeader, afterHours, close, high, low, open, preMarket, status, volume)
+  historyCard.append(carHeader, afterHours, close, high, low, open, preMarket, volume)
   console.log(historyCard)
   
-
-  // "afterHours": 322.1,
-  // "close": 325.12,
-  // "from": "2023-01-09",
-  // "high": 326.2,
-  // "low": 322.3,
-  // "open": 324.66,
-  // "preMarket": 324.5,
-  // "status": "OK",
-  // "symbol": "AAPL",
-  // "volume": 26122646
-  // $('.card-text0').empty()
-  // $('.card-text0').append("Company: "+outputTxt)
-  // $('.card-text1').empty()
-  // $('.card-text1').append("Current Price: "+stockData.c)
-  // $('.card-text2').empty()
-  // $('.card-text2').append("Change: "+stockData.d)
-  // $('.card-text3').empty()
-  // $('.card-text3').append("Percent Change: "+stockData.dp)
-  // $('.card-text4').empty()
-  // $('.card-text4').append("High price of the day: "+stockData.h)
-  // $('.card-text5').empty()
-  // $('.card-text5').append("Low price of the day: "+stockData.l)
-  // $('.card-text6').empty()
-  // $('.card-text6').append("Open price of the day: "+stockData.o)
-  // $('.card-text7').empty()
-  // $('.card-text7').append("Previous close price: "+stockData.pc)
 }
+
 
 // .on("click") function associated with the Search Button
 $("#datepicker" ).on("change", function(event){
@@ -248,7 +273,7 @@ $("#datepicker" ).on("change", function(event){
     .then(function (response) {
       return response.json();
     })
-    .then(updateStockDataHistory
+    .then(updateStockChecker
       //THIS WOULD BE WHERE IF STATEMENT SITS TO CATCH ERROR CAUSED BY BEING OUTSIDE DATE PARAMETERS
       );
     
