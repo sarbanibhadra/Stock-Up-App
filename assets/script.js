@@ -89,7 +89,7 @@ function updateStockDataCurrent(stockData) {
   historyCard.append(carHeader)
   $('#datepicker').datepicker('setDate', null);
 
-  historicData = {currentCompanyTxt, ...stockData} //spread operator
+  historicData = {currentCompanyTxt, currentCompany, ...stockData} //spread operator
   console.log("historicData: ", historicData);
   localStorage.setItem("historyData", JSON.stringify(historicData))
 }
@@ -102,6 +102,50 @@ function renderHistoricData(){
 function renderHistoricData(){
 
   console.log("inside renderHistoricData")
+}
+
+function renderHistoricData(){
+  console.log("inside renderHistoricData", historicData.currentCompanyTxt)
+  var src = "";
+if (currentCompany == 'AAPL')
+  src="./assets/images/logoApple.png"
+else if (currentCompany == 'MSFT')
+  src="./assets/images/microsoftLogo.png"
+else if (currentCompany == 'AMZN')
+  src="./assets/images/amazon.png"
+else if (currentCompany == 'NVDA')
+  src="./assets/images/nvidia.png" 
+else if (currentCompany == 'AVGO')
+  src="./assets/images/broad.png"
+else if (currentCompany == 'META')
+  src="./assets/images/meta.png"
+else if (currentCompany == 'TSLA')
+  src="./assets/images/tesla.png"
+else if (currentCompany == 'GOOGL')
+  src = ""
+else if (currentCompany == 'COST')
+  src="./assets/images/costco.png"
+else if (currentCompany == 'NFLX')
+  src="./assets/images/netflix.png"
+ 
+
+  var lastCard = $("#stock-data-card-L")
+  //<img src="./assets/images/microsoftLogo.png" alt="Microsoft" class="image-button">
+  var carHeader = $("<h5>")
+  carHeader.addClass("card-title")
+  carHeader.attr("id", "stock-data-header")
+  carHeader.append("Last Stock checked")
+
+  var lastStockName = $("<p>")
+  lastStockName.append(historicData.currentCompanyTxt);
+  lastStockName.attr("id", "stock-data")
+
+  var lastStockImg = $("<img>")
+  lastStockImg.addClass("image-button")
+  lastStockImg.attr("src", src)
+  lastCard.empty()
+  lastCard.append(carHeader, lastStockName, lastStockImg)
+
 }
 // .on("change") function associated with the Drop Down list
 $("#stocks").on("change", function (event) {
@@ -148,7 +192,23 @@ function updateStockChecker(pastStockData) {
   console.log(pastStockData)
   if (pastStockData.status == "OK"){
     updateStockDataHistory(pastStockData)
-  }  
+  } else if (pastStockData.status == "ERROR"){
+    console.log(pastStockData.status)
+    message = "You've exceeded the maximum requests per minute, please wait!";
+    historyCard.empty()
+
+    var carHeader = $("<h5>")
+    carHeader.addClass("card-title")
+    carHeader.attr("id", "stock-data-header")
+    carHeader.append("Daily Open Close")
+
+    var msgE = $("<p>")
+    msgE.append("Error: "+message)
+    msgE.attr("id", "stock-data-error")
+
+    historyCard.append(carHeader, msgE)
+  }
+
 }
 
 /**
@@ -160,26 +220,26 @@ function updateStockDataHistory(pastStockData) {
   selectElement = document.querySelector('#stocks');                
   output = selectElement.value;
 
-  if (output == 'AAPL')
-    outputTxt = "Apple Inc."
-  else if (output == 'MSFT')
-    outputTxt = "Microsoft Corp."
-  else if (output == 'AMZN')
-    outputTxt = "Amazon.com Inc."
-  else if (output == 'NVDA')
-    outputTxt = "NVIDIA Corp."
-  else if (output == 'AVGO')
-    outputTxt = "Broadcom Inc."
-  else if (output == 'META')
-    outputTxt = "Meta Platforms Inc."
-  else if (output == 'TSLA')
-    outputTxt = "Tesla Inc."
-  else if (output == 'GOOGL')
-    outputTxt = "Alphabet Inc. Class A."
-  else if (output == 'COST')
-    outputTxt = "Costco Wholesale Corp."
-  else if (output == 'NFLX')
-    outputTxt = "Netflix Inc."
+  // if (output == 'AAPL')
+  //   outputTxt = "Apple Inc."
+  // else if (output == 'MSFT')
+  //   outputTxt = "Microsoft Corp."
+  // else if (output == 'AMZN')
+  //   outputTxt = "Amazon.com Inc."
+  // else if (output == 'NVDA')
+  //   outputTxt = "NVIDIA Corp."
+  // else if (output == 'AVGO')
+  //   outputTxt = "Broadcom Inc."
+  // else if (output == 'META')
+  //   outputTxt = "Meta Platforms Inc."
+  // else if (output == 'TSLA')
+  //   outputTxt = "Tesla Inc."
+  // else if (output == 'GOOGL')
+  //   outputTxt = "Alphabet Inc. Class A."
+  // else if (output == 'COST')
+  //   outputTxt = "Costco Wholesale Corp."
+  // else if (output == 'NFLX')
+  //   outputTxt = "Netflix Inc."
   
   
   //<h5 class="card-title"  id="stock-data-header" >Daily Open Close</h5>
@@ -217,7 +277,7 @@ function updateStockDataHistory(pastStockData) {
   volume.attr("id", "stock-data")
 
   historyCard.empty()
-  historyCard.append(carHeader, afterHours, close, high, low, open, preMarket, status, volume)
+  historyCard.append(carHeader, afterHours, close, high, low, open, preMarket, volume)
   console.log(historyCard)
   
 }
