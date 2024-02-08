@@ -1,8 +1,9 @@
 body {
     margin: 0;
+    border: 0px;
     padding: 0;
     background-image: url('https://www.color-meanings.com/wp-content/uploads/Blue-and-green-mixing-1024x449.jpeg');
-    background-size: cover; /* You may use 'contain' if needed */
+    background-size: cover;
     font-family: 'Alergb(32, 32, 32) a Sans SC';
     font-size: 22px;
   
@@ -39,7 +40,7 @@ body {
 #dropdown-card {
     color: rgb(32, 32, 32);
     background-image: url('https://www.color-meanings.com/wp-content/uploads/Blue-and-green-mixing-1024x449.jpeg');
-    background-size: cover; /* You may use 'contain' if needed */
+    background-size: cover; 
     margin: 0px;
     padding: 2px;
     font-family: 'Alergb(32, 32, 32) a Sans SC';
@@ -222,7 +223,13 @@ img {
     margin: 0 auto;
     cursor: pointer;
 }
+#footer{
+    margin-top: 1%;
+}
 
+#footer-text{
+    margin: 0px;
+}
 
 @media only screen and (max-width: 768px) {
     #title {
@@ -246,6 +253,7 @@ img {
 
     #datepicker {
         font-size: 14px;
+       
     }
 
     #date {
@@ -258,7 +266,9 @@ img {
         font-size: 14px;
     }
 
-    #stock-data-container,
+    #stock-data-container{
+        margin: 0px;
+    }
     #stock-data-card {
         margin: 2% 2%;
     }
@@ -296,5 +306,28 @@ img {
 
     .container ul li {
         flex: 0 0 calc(50% - 10px);
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+
+    #datepicker {
+        font-size: 20px;
+        width: 100px;
+    }
+
+    #date {
+        width: 70%;
+        color: rgb(255, 170, 51);
+    }
+
+    #stock-data{
+        font-size: 18px;
+    }
+    #stock-data-container{
+        margin: 0px;
+    }
+    #stock-data-card {
+        margin: 2% 2%;
     }
 }
