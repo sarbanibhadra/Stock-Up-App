@@ -130,7 +130,7 @@ else if (currentCompany == 'NFLX')
   carHeader.append("Last Stock checked")
 
   var lastStockName = $("<p>")
-  lastStockName.append(historicData.currentCompanyTxt+" ("+currentCompany+")");
+  lastStockName.append(historicData.currentCompanyTxt+"   ("+currentCompany+")");
   lastStockName.attr("id", "stock-data")
 
   var lastStockImg = $("<img>")
