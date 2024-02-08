@@ -107,6 +107,8 @@ function renderHistoricData(){
 function renderHistoricData(){
   console.log("inside renderHistoricData", historicData.currentCompanyTxt)
   var src = "";
+
+var currentCompany = historicData.currentCompany;
 if (currentCompany == 'AAPL')
   src="./assets/images/logoApple.png"
 else if (currentCompany == 'MSFT')
@@ -190,22 +192,25 @@ $("#stocks").on("change", function (event) {
 
 function updateStockChecker(pastStockData) {
   console.log(pastStockData)
+  var carHeader = $("<h5>")
+    carHeader.addClass("card-title")
+    carHeader.attr("id", "stock-data-header")
+    carHeader.append("Daily Open Close")
+    var msgE = $("<p>")
+    msgE.attr("id", "stock-data-error")
+
   if (pastStockData.status == "OK"){
     updateStockDataHistory(pastStockData)
   } else if (pastStockData.status == "ERROR"){
     console.log(pastStockData.status)
-    message = "You've exceeded the maximum requests per minute, please wait!";
+    message = "Error: You've exceeded the maximum requests per minute, please wait!";
     historyCard.empty()
-
-    var carHeader = $("<h5>")
-    carHeader.addClass("card-title")
-    carHeader.attr("id", "stock-data-header")
-    carHeader.append("Daily Open Close")
-
-    var msgE = $("<p>")
-    msgE.append("Error: "+message)
-    msgE.attr("id", "stock-data-error")
-
+    msgE.append(message)
+    historyCard.append(carHeader, msgE)
+  } else if (pastStockData.status == "NOT_FOUND"){
+    message = "Error: Market Close, Try a week day!";
+    historyCard.empty()
+    msgE.append(message)
     historyCard.append(carHeader, msgE)
   }
 
