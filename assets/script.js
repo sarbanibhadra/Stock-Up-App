@@ -1,6 +1,8 @@
 var historyCard = $("#stock-data-card-H")
 var historicData = localStorage.getItem("historyData") ? JSON.parse(localStorage.getItem("historyData")): null
 
+
+
 /**
  * pulls information from the form and build the query URL
  * @returns {string} URL for the API based on form inputs
@@ -97,7 +99,10 @@ function renderHistoricData(){
   console.log("inside renderHistoricData")
 }
 
+function renderHistoricData(){
 
+  console.log("inside renderHistoricData")
+}
 // .on("change") function associated with the Drop Down list
 $("#stocks").on("change", function (event) {
   // DEVELOP: local storage for every stock picked and add to an array to make a fancy "stocks you looked at" card/div
