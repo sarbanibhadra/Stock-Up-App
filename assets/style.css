@@ -34,32 +34,10 @@ body {
 #navbar-container{
     background-color: rgb(32, 32, 32) !important;
 }
-#search-discription{
-    color: aliceblue;
-    margin-left: 5%;
-}
-#search-bar-container{
-    margin-right: 2%;
-    margin-left: 30%;
-    background-color: #0000006e;
-    width: 600px;
-    margin-bottom: 2%;
-}
-#searchbar{
-    margin-top: 10px;
-    margin-right: 2%;
-    margin-left: 10px;
-}
-
-#search-button{
-    margin-top: 10px;
-    margin-right: 2%;
-    margin-left: 2%;
-}
-
-#dropdown-card{
-    color: rgb(32,32,32);
-    background-color: #09878bc4;
+#dropdown-card {
+    color: rgb(32, 32, 32);
+    background-image: url('https://www.color-meanings.com/wp-content/uploads/Blue-and-green-mixing-1024x449.jpeg');
+    background-size: cover; /* You may use 'contain' if needed */
     margin: 0px;
     padding: 2px;
     font-family: 'Alergb(32, 32, 32) a Sans SC';
