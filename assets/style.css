@@ -1,8 +1,10 @@
 body {
     margin: 0;
     border: 0px;
+    border: 0px;
     padding: 0;
     background-image: url('https://www.color-meanings.com/wp-content/uploads/Blue-and-green-mixing-1024x449.jpeg');
+    background-size: cover;
     background-size: cover;
     font-family: 'Alergb(32, 32, 32) a Sans SC';
     font-size: 22px;
@@ -37,7 +39,7 @@ body {
 #dropdown-card {
     color: rgb(32, 32, 32);
     background-image: url('https://www.color-meanings.com/wp-content/uploads/Blue-and-green-mixing-1024x449.jpeg');
-    background-size: cover; /* You may use 'contain' if needed */
+    background-size: cover; 
     margin: 0px;
     padding: 2px;
     font-family: 'Alergb(32, 32, 32) a Sans SC';
