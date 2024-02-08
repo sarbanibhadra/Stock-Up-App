@@ -141,8 +141,9 @@ $("#stocks").on("change", function (event) {
 
 function updateStockChecker(pastStockData) {
   console.log(pastStockData)
-  if pastStockData.status == "OK"
-  updateStockDataHistory(pastStockData)
+  if (pastStockData.status == "OK"){
+    updateStockDataHistory(pastStockData)
+  }  
 }
 
 /**
