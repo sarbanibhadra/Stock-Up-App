@@ -1,9 +1,11 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: rgb(32, 32, 32) !important;
+    background-image: url('https://www.color-meanings.com/wp-content/uploads/Blue-and-green-mixing-1024x449.jpeg');
+    background-size: cover; /* You may use 'contain' if needed */
     font-family: 'Alergb(32, 32, 32) a Sans SC';
     font-size: 22px;
+  
 }
 
 #title {
@@ -13,17 +15,23 @@ body {
     font-size: 125px;
     margin-top: 1%;
     margin-right: 30%;
+    cursor: default;
+
 }
-#quote{
+
+#quote {
     text-align: center;
     color: rgb(255, 255, 255);
     font-weight: 600;
     margin-bottom: 0px;
-    font-family: 'Alergb(32,32,32)a Sans SC';font-size: 50px;
+    font-family: 'Alergb(32, 32, 32) a Sans SC';
+    font-size: 50px;
     margin-left: 35%;
+    cursor: default;
+
 }
 #navbar-container{
-    background-color: rgb(32,32,32) !important ;
+    background-color: rgb(32, 32, 32) !important;
 }
 #search-discription{
     color: aliceblue;
@@ -53,25 +61,28 @@ body {
     background-color: #09878bc4;
     margin: 0px;
     padding: 2px;
-    font-family: 'Alergb(32,32,32)a Sans SC';font-size: 22px;
+    font-family: 'Alergb(32, 32, 32) a Sans SC';
+    font-size: 22px;
 }
 
-#searchbar-title{
+#searchbar-title {
     text-align: center;
     font-size: 50px;
     font-weight: 600;
-    font-family: 'Alergb(32,32,32)a Sans SC';
+    font-family: 'Alergb(32, 32, 32) a Sans SC';
     margin-right: 50%;
     color: #ffffff;
-
+    cursor: default;
 }
-#stocks{color:rgb(32,32,32);
-background-color: #00ffff6e;
-font-size: 25px;
-font-weight: 600;
-font-family: 'Alergb(32,32,32)a Sans SC';
-text-align: center;
-cursor: pointer;
+
+#stocks {
+    color: rgb(32, 32, 32);
+    background-color: #00ffff6e;
+    font-size: 25px;
+    font-weight: 600;
+    font-family: 'Alergb(32, 32, 32) a Sans SC';
+    text-align: center;
+    cursor: pointer;
 }
 
 
@@ -91,11 +102,13 @@ margin-left: 20px;}
 
 }
 
-    #submit-btn{
-margin-bottom: 2%;
-color :aliceblue;
-font-family: 'Alergb(32,32,32)a Sans SC';font-size: 22px;
-font-weight: 600;}
+#submit-btn {
+    margin-bottom: 2%;
+    color: aliceblue;
+    font-family: 'Alergb(32, 32, 32) a Sans SC';
+    font-size: 22px;
+    font-weight: 600;
+}
 
     #stock-data-container{
      background-color: #09878bc4;
@@ -136,37 +149,53 @@ font-weight: 600;}
         font-weight: 400;
     }
 
-    #intro-text{
-        margin-top: 4%;
-        margin-left: 25%;
-        font-size: 40px;
-    font-weight: 600;}
-
-    #coins{
-        color: gold;
-    }
-    #graph{color: black;
-    font-size :110px ;}
-    #globe{
-        color: #000000c4;
-    }
-
-    #moneybag{
-        font-size: 90;
-    color: rgba(210, 105, 30, 0.76);
-margin-left: 4%;}
-
-#magnifying-glass{
-    color:rgba(32, 32, 32, 0.94);
+#intro-text {
+    margin-top: 5px;
+    margin-left: 25%;
+    font-size: 40px;
+    font-weight: 600;
+    color: #ffffff;
+    cursor: default;
 }
-#historical-data{
+#navbar-btn{
+  
+    background-image: url('https://www.color-meanings.com/wp-content/uploads/Blue-and-green-mixing-1024x449.jpeg');
+    background-size: cover; 
+    opacity: 0.8;
+}
+#coins {
+    color: gold;
+}
+
+#graph {
+    color: black;
+    font-size: 110px;
+}
+
+#globe {
+    color: #000000c4;
+}
+
+#moneybag {
+    font-size: 90;
+    color:rgb(255, 170, 51);
+    margin-left: 4%;
+}
+
+#magnifying-glass {
+    color: rgba(32, 32, 32, 0.94);
+}
+
+#historical-data {
     align-items: center;
-    background-color: #09878bc4;
+    background-image: url('https://www.color-meanings.com/wp-content/uploads/Blue-and-green-mixing-1024x449.jpeg');
+    background-size: cover; 
     height: 700px;
     margin-left: 50%;
     margin-top: 8%;
     margin-bottom: 6%;
     border-radius: 60px;
+
 }
 
 #historic-data-text{
