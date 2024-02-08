@@ -70,7 +70,7 @@
   - **Description:** This endpoint provides real-time stock data, returning an object.
 
 - **Finnhub Quote Endpoint:**
-  - [Finnhub Quote Endpoint](link-to-finnhub-quote-endpoint)
+  - [Finnhub Quote Endpoint](https://finnhub.io/docs/api/quote)
   - **Description:** This endpoint provides current, high, and low stock data.
 
 ### Polygon.io API
@@ -83,7 +83,7 @@
   - **Description:** This endpoint provides the current high and low stock values.
 
 - **Endpoint for Fetching Daily Open/Close:**
-  - [Polygon.io Daily Open/Close Endpoint](link-to-polygon-daily-open-close-endpoint)
+  - [Polygon.io Daily Open/Close Endpoint](https://polygon.io/docs/stocks/get_v1_open-close__stocksticker___date)
   - **Description:** This endpoint provides daily open and close stock values.
 
 ## Roles
