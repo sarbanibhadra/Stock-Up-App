@@ -186,148 +186,54 @@ background-color: #ffffff;
 
 }
 
-#historic-data-text {
-    margin-top: 2%;
-    margin-bottom: 2%;
-    margin-left: 4%;
+#historic-data-text{
+    margin-top: 10px;
+    margin-bottom: 10px;
+margin-left: 20px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.image-button {
+    display: block;
+    text-align: center;
 }
 
 .container ul {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    list-style: none;
+    justify-content: space-between; 
+    flex-wrap: wrap; 
+    list-style: none; 
     padding: 0;
-}
-
-.container ul li {
+  }
+  
+  .container ul li {
     flex: 0 0 calc(20% - 10px);
-    margin-bottom: 20px;
-}
-
-.container ul li img {
-    width: 100%;
-    height: auto;
-}
+    margin-bottom: 20px; 
+  }
+  
+  .container ul li img {
+    width: 100%; 
+    height: auto; 
+  }
+  
 
 .logo-image {
-    width: 50x;
-    height: 50px;
-    object-fit: contain;
+    width: 50x; 
+    height: 50px; 
+    object-fit:contain; 
 }
 
 img {
-    max-width: 50%;
+    max-width: 70%; 
     height: auto;
     display: block;
     margin: 0 auto;
     cursor: pointer;
 }
-#footer{
-    margin-top: 1%;
-}
 
-#footer-text{
-    margin: 0px;
-}
 
-@media only screen and (max-width: 768px) {
-    #title {
-        font-size: 30px;
-        margin-right: 2%;
-    }
-
-    #quote {
-        font-size: 16px;
-        margin-left: 2%;
-    }
-
-    #searchbar-title {
-        font-size: 18px;
-        margin-right: 2%;
-    }
-
-    #stocks {
-        font-size: 16px;
-    }
-
-    #datepicker {
-        font-size: 14px;
-       
-    }
-
-    #date {
-        width: 100%;
-        color:rgb(255, 170, 51);
-    }
- 
-
-    #submit-btn {
-        font-size: 14px;
-    }
-
-    #stock-data-container{
-        margin: 0px;
-    }
-    #stock-data-card {
-        margin: 2% 2%;
-    }
-
-    #stock-data-header {
-        font-size: 20px;
-    }
-
-    #stock-data {
-        font-size: 16px;
-    }
-
-    #intro-text {
-        font-size: 16px;
-        margin-left: 2%;
-    }
-
-    #graph {
-        font-size: 60px;
-    }
-
-    #moneybag {
-        font-size: 40px;
-        margin-left: 2%;
-    }
-
-    #historic-data {
-        margin-left: 2%;
-        margin-right: 2%;
-    }
-
-    #historic-data-text {
-        font-size: 16px;
-    }
-
-    .container ul li {
-        flex: 0 0 calc(50% - 10px);
-    }
-}
-
-@media only screen and (max-width: 1024px) {
-
-    #datepicker {
-        font-size: 20px;
-        width: 100px;
-    }
-
-    #date {
-        width: 70%;
-        color: rgb(255, 170, 51);
-    }
-
-    #stock-data{
-        font-size: 18px;
-    }
-    #stock-data-container{
-        margin: 0px;
-    }
-    #stock-data-card {
-        margin: 2% 2%;
-    }
-}
