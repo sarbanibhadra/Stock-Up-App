@@ -99,6 +99,13 @@ font-weight: 600;}
         font-weight: 400;
     }
 
+    #stock-data-error{
+        margin-top: 15px;
+        font-family: 'Alergb(32,32,32)a Sans SC';font-size: 20px;
+        color:rgb(231, 14, 14);
+        font-weight: 400;
+    }
+
     #intro-text{
         margin-top: 20px;
         margin-left: 200px;
