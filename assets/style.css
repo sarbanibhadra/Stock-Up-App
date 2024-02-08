@@ -203,3 +203,19 @@ footer {
     color: antiquewhite;
 }
 
+#back-to-top {
+    display: inline-block;
+    background-color: #3b492f;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 20px auto 0;
+    display: block;
+    width: fit-content;
+}
+
+#back-to-top:hover {
+    background-color: #275300;
+}
+
