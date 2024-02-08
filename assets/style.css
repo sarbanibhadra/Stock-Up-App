@@ -137,20 +137,16 @@ margin-left: 20px;
 .image-button {
     display: inline-block; 
     text-align: center;
-    padding: 0 20px;
 }
-
-
 
 .container ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     list-style: none;
+    padding: 0%;
     margin-top: 50px;
     padding: 0 20px;
-    width: 100%;
-    
 }
 
 .container ul li {
@@ -164,7 +160,7 @@ margin-left: 20px;
     height: auto;
     object-fit: contain; 
     justify-content: space-between;
-    padding: 0 20px;
+    
 }
 
 .logo-image {
@@ -174,11 +170,11 @@ margin-left: 20px;
 }
 
 img {
-    max-width: 100%; 
+    max-width: 60%; 
     height: auto;
     display: block;
     margin: 0 auto;
-    cursor: pointer;  
+    cursor: pointer;
 }
 
 img:hover {
@@ -244,3 +240,20 @@ footer {
     background: #218026; 
   }
   
+  @media (max-width: 768px) {
+    .container ul li {
+      flex: 0 0 calc(33.33% - 20px);
+    }
+  
+    .container ul li img {
+      width: 100%;
+      height: auto;
+      object-fit: contain; 
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .container ul li {
+      flex: 0 0 calc(50% - 20px); 
+    }
+  }
