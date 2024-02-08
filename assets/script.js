@@ -225,7 +225,10 @@ $("#datepicker" ).on("change", function(event){
     .then(function (response) {
       return response.json();
     })
-    .then(updateStockDataHistory);
+    .then(updateStockDataHistory
+      //THIS WOULD BE WHERE IF STATEMENT SITS TO CATCH ERROR CAUSED BY BEING OUTSIDE DATE PARAMETERS
+      );
+    
 });
 
 function pageOnLoad(companysybol){
@@ -245,8 +248,10 @@ function pageOnLoad(companysybol){
 
 $( function() {
   $( "#datepicker").datepicker({
-    dateFormat: "yy-mm-dd" // NOTE this actually returns yyyy-mm-dd format
-    }
+    dateFormat: "yy-mm-dd", // NOTE this actually returns yyyy-mm-dd format
+    maxDate: -1,
+    minDate: -730,
+  }
   ); 
 } );
 
