@@ -8,14 +8,33 @@
     <link rel="stylesheet" href="assets/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-    <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
+ 
 </head>
 <body onload="pageOnLoad('AAPL')">
     <div class="jumbotron bg-success">
         <h1 class="display-4" id="title"><i class="fa-solid fa-money-bill-trend-up" id="graph"></i> Stock Up <i class="fa-solid fa-coins" id="coins"></i></h1>
         <p class="lead" id="quote"><i class="fa-solid fa-globe"id="globe"></i></i> The World's Best Financial Tool</p>
     </div>
-<br>
+    
+    <nav class="navbar navbar-expand-lg  bg-body-tertiary" id="navbar-container">
+      <div class="container-fluid ">
+        <a class="navbar-brand text-light" href="#">Home</a>
+        <button id="navbar-btn" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active text-light" aria-current="page" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" target="_blank" >contact us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="https://github.com/sarbanibhadra/Project1" target="_blank" >About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
     <div class="card" style="width: 100%;">
         <div class="card-body" id="dropdown-card">
           <h5 class="card-title" id="searchbar-title">Top Stocks<i class="fa-solid fa-sack-dollar"id="moneybag"></i></h5>
@@ -39,18 +58,18 @@
 
             <div class="container">
               <ul>
-                <li><a class="image-button" href="https://apple.com"><img src="./assets/images/logoApple.png" alt="Apple"></a></li>
-                <li><a class="image-button" href="https://microsoft.com"><img src="./assets/images/microsoftLogo.png" alt="Microsoft"></a></li>
-                <li><a class="image-button" href="https://amazon.com"><img src="./assets/images/amazon.png" alt="Amazon"></a></li>
-                <li><a class="image-button" href="https://nvidia.com"><img src="./assets/images/nvidia.png" alt="nvidia"></a></li>
-                <li><a class="image-button" href="https://broadcom.com"><img src="./assets/images/broad.png" alt="broad"></a></li>
+                <li><a class="image-button" href="https://icons.veryicon.com/png/o/internet--web/iview-3-x-icons/logo-apple.png"><img src="./assets/images/logoApple.png" alt="Apple"></a></li>
+                <li><a class="image-button" href="https://example.com"><img src="./assets/images/microsoftLogo.png" alt="Microsoft"></a></li>
+                <li><a class="image-button" href="https://example.com"><img src="./assets/images/amazon.png" alt="Amazon"></a></li>
+                <li><a class="image-button" href="https://example.com"><img src="./assets/images/nvidia.png" alt="nvidia"></a></li>
+                <li><a class="image-button" href="https://example.com"><img src="./assets/images/broad.png" alt="broad"></a></li>
               </ul>
               <ul>
-                <li><a class="image-button" href="https://meta.com"><img src="./assets/images/meta.png" alt="meta"></a></li>
-                <li><a class="image-button" href="https://tesla.com"><img src="./assets/images/tesla.png" alt="tesla"></a></li>
-                <li><a class="image-button" href="https://netflix.com"><img src="./assets/images/netflix.png" alt="netflix"></a></li>
-                <li><a class="image-button" href="https://costco.com"><img src="./assets/images/costco.png" alt="costco"></a></li>
-                <li><a class="image-button" href="https://abc.xyz"><img src="./assets/images/alpha.png" alt="alpha"></a></li>
+                <li><a class="image-button" href="https://example.com"><img src="./assets/images/meta.png" alt="meta"></a></li>
+                <li><a class="image-button" href="https://example.com"><img src="./assets/images/tesla.png" alt="tesla"></a></li>
+                <li><a class="image-button" href="https://example.com"><img src="./assets/images/netflix.png" alt="netflix"></a></li>
+                <li><a class="image-button" href="https://example.com"><img src="./assets/images/costco.png" alt="costco"></a></li>
+                <li><a class="image-button" href="https://example.com"><img src="./assets/images/alpha.png" alt="alpha"></a></li>
               </ul>
             </div>
             
@@ -85,7 +104,6 @@
                 </div>
               </div>
             </div>
-          
           </form>
         </div>
     </div>
