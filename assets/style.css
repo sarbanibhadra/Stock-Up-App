@@ -1,8 +1,9 @@
 body {
     margin: 0;
+    border: 0px;
     padding: 0;
     background-image: url('https://www.color-meanings.com/wp-content/uploads/Blue-and-green-mixing-1024x449.jpeg');
-    background-size: cover; /* You may use 'contain' if needed */
+    background-size: cover;
     font-family: 'Alergb(32, 32, 32) a Sans SC';
     font-size: 22px;
   
@@ -245,6 +246,9 @@ img {
     display: block;
     margin: 0 auto;
     cursor: pointer;
+}
+#footer{
+    margin-top: 1%;
 }
 
 img:hover {
