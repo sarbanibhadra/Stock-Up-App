@@ -147,26 +147,34 @@ margin-left: 20px;
 .image-button {
     display: inline-block; 
     text-align: center;
-    padding: 20px;
+    padding: 0 20px;
 }
+
+
 
 .container ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     list-style: none;
-    padding: 0%;
     margin-top: 50px;
+    padding: 0 20px;
+    width: 100%;
+    
 }
 
 .container ul li {
     flex: 0 0 calc(20% - 10px); 
+    justify-content: space-between;
+    padding: 0 20px;
 }
 
 .container ul li img {
     width: 100%;
     height: auto;
     object-fit: contain; 
+    justify-content: space-between;
+    padding: 0 20px;
 }
 
 .logo-image {
@@ -176,11 +184,11 @@ margin-left: 20px;
 }
 
 img {
-    max-width: 70%; 
+    max-width: 100%; 
     height: auto;
     display: block;
     margin: 0 auto;
-    cursor: pointer;
+    cursor: pointer;  
 }
 
 img:hover {
@@ -230,7 +238,7 @@ footer {
 }
 
 ::-webkit-scrollbar {
-    width: 10px; 
+    width: 13px; 
   }
   
   ::-webkit-scrollbar-track {
