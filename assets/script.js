@@ -95,6 +95,30 @@ $("#stocks").on("change", function (event) {
   event.preventDefault();
   input = $(event.target).val();
   console.log(input);
+  
+  //LOCAL STORAGE CODE BELOW note added class .last-stock-display to the correct <p> element in right hand card
+  //this now needs to persist on selection of new stock, so what is the action that clears it? Where does it have to move?
+  //Do we want to use the Company full name rather than the stock symbol? Shall we utlise the code in updateStockDataCurrent function i.e. if (output == 'COST') outputTxt = "Costco Wholesale Corp." etc?
+  //localStorage.clear();
+  var lastChosenStockSymbol = localStorage.getItem("chosenStock");
+  console.log( 'previous stock', typeof lastChosenStockSymbol)
+  if (lastChosenStockSymbol){
+  localStorage.setItem('previousStock', lastChosenStockSymbol)
+    $(".last-stock-display").text(lastChosenStockSymbol);
+  
+  }
+  // if it exist !==="" lastChosenStockSymbol
+  // take lostChosenStockSymbol and store it in a new localStorage.setItem('previousStock', lastChosenStockSymbol)
+
+
+  localStorage.setItem("chosenStock", input);
+
+  //DOES THE ABOVE getItem need to sit in its own function (example below) or another of the event listeners? 
+  // function recallStockSymbol () {
+  //   var lastChosenStockSymbol = localStorage.getItem("chosenStock");
+  //   console.log(lastChosenStockSymbol + "is your last chosen stock");
+  // };
+
   // Build the query URL for the Fetch request to the API
   var queryURL = buildQueryURLCurrent(input);
   // Make the Fetch request to the API - GETs the JSON data at the queryURL.
@@ -203,7 +227,6 @@ function updateStockDataHistory(pastStockData) {
   // $('.card-text7').empty()
   // $('.card-text7').append("Previous close price: "+stockData.pc)
 }
-
 
 // .on("click") function associated with the Search Button
 $("#datepicker" ).on("change", function(event){
