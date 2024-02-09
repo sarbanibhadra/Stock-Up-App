@@ -6,18 +6,16 @@ body {
     background-size: cover;
     font-family: 'Alergb(32, 32, 32) a Sans SC';
     font-size: 22px;
-  
 }
 
 #title {
     text-align: center;
     color: rgba(240, 248, 255, 0.87);
     font-family: 'Alergb(32, 32, 32) a Sans SC';
-    font-size: 125px;
+    font-size: 70px; 
     margin-top: 1%;
     margin-right: 30%;
     cursor: default;
-
 }
 
 #quote {
@@ -26,21 +24,35 @@ body {
     font-weight: 600;
     margin-bottom: 0px;
     font-family: 'Alergb(32, 32, 32) a Sans SC';
-    font-size: 50px;
+    font-size: 30px; 
     margin-left: 35%;
+    cursor: default;
+}
+
+#searchbar-title {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    margin-bottom: 0px;
+    font-family: 'Alergb(32, 32, 32) a Sans SC';
+    font-size: 30px; 
+    margin-left: 5%;
     cursor: default;
 
 }
-#navbar-container{
+
+#navbar-container {
     background-color: rgb(32, 32, 32) !important;
 }
-#logos-container{
+
+#logos-container {
     margin-top: 20px;
 }
+
 #dropdown-card {
     color: rgb(32, 32, 32);
     background-image: url('https://www.color-meanings.com/wp-content/uploads/Blue-and-green-mixing-1024x449.jpeg');
-    background-size: cover; 
+    background-size: cover;
     margin: 0px;
     padding: 2px;
     font-family: 'Alergb(32, 32, 32) a Sans SC';
@@ -69,7 +81,7 @@ body {
 
 #datepicker {
     color: rgb(0, 0, 0);
-background-color: #ffffff;
+    background-color: #ffffff;
     text-align: center;
     border-radius: 10px;
     margin-top: 2%;
@@ -78,13 +90,12 @@ background-color: #ffffff;
     margin-top: 2%;
     margin-bottom: 2%;
     margin-left: 4%;
-    
 }
 
 #date {
     margin-left: 4%;
     width: 30%;
-    color:rgb(255, 170, 51);
+    color: rgb(255, 170, 51);
     cursor: default;
 }
 
@@ -98,8 +109,7 @@ background-color: #ffffff;
 
 #stock-data-container {
     background-image: url('https://www.color-meanings.com/wp-content/uploads/Blue-and-green-mixing-1024x449.jpeg');
-    background-size: cover; 
-   
+    background-size: cover;
     font-weight: 800;
 }
 
@@ -137,12 +147,14 @@ background-color: #ffffff;
     cursor: default;
 }
 
-#stock-data-error{
+#stock-data-error {
     margin-top: 15px;
-    font-family: 'Alergb(32,32,32)a Sans SC';font-size: 20px;
-    color:rgb(231, 14, 14);
+    font-family: 'Alergb(32, 32, 32) a Sans SC';
+    font-size: 20px;
+    color: rgb(231, 14, 14);
     font-weight: 400;
 }
+
 #intro-text {
     margin-top: 5px;
     margin-left: 25%;
@@ -151,12 +163,13 @@ background-color: #ffffff;
     color: #ffffff;
     cursor: default;
 }
-#navbar-btn{
-  
+
+#navbar-btn {
     background-image: url('https://www.color-meanings.com/wp-content/uploads/Blue-and-green-mixing-1024x449.jpeg');
-    background-size: cover; 
+    background-size: cover;
     opacity: 0.8;
 }
+
 #coins {
     color: gold;
 }
@@ -171,8 +184,8 @@ background-color: #ffffff;
 }
 
 #moneybag {
-    font-size: 90;
-    color:rgb(255, 170, 51);
+    font-size: 90px;
+    color: rgb(255, 170, 51);
     margin-left: 4%;
 }
 
@@ -183,60 +196,58 @@ background-color: #ffffff;
 #historical-data {
     align-items: center;
     background-image: url('https://www.color-meanings.com/wp-content/uploads/Blue-and-green-mixing-1024x449.jpeg');
-    background-size: cover; 
+    background-size: cover;
     height: 700px;
     margin-left: 50%;
     margin-top: 8%;
     margin-bottom: 6%;
     border-radius: 60px;
-
 }
 
-#historic-data-text{
+#historic-data-text {
     margin-top: 10px;
     margin-bottom: 10px;
-margin-left: 20px;
+    margin-left: 20px;
+    font-family: 'Alergb(32, 32, 32) a Sans SC';
+    font-size: 20px;
 }
-
 
 .image-button {
     display: block;
     text-align: center;
 }
 
-.container ul {
+.container1 ul {
     display: flex;
     justify-content: space-between; 
     flex-wrap: wrap; 
-    list-style: none; 
+    list-style: none;
     padding: 0;
-      padding: 0 20px;
+    margin: 0; 
 }
-  
-  .container ul li {
-    flex: 0 0 calc(20% - 10px);
+
+.container1 ul li {
+    flex: 0 0 calc(15% - 10px);
     margin-top: 60px;
-    margin-bottom: 20px; 
-      justify-content: space-between;
-    padding: 0 20px;
+    margin-bottom: 20px;
+    justify-content: space-between;
+    padding: 0 1%;
 }
-  
-  .container ul li img {
-    width: 100%; 
-    height: auto; 
-      justify-content: space-between;
-    
+
+.container1 ul li img {
+    width: 100%;
+    height: auto;
+    justify-content: space-between;
 }
-  
 
 .logo-image {
-    width: 50x; 
-    height: 50px; 
-    object-fit:contain; 
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
 }
 
 img {
-    max-width: 60%; 
+    max-width: 60%;
     height: auto;
     display: block;
     margin: 0 auto;
@@ -249,9 +260,8 @@ img:hover {
 
 .container2 {
     display: flex;
-    flex-wrap: wrap; 
-    justify-content: center; 
-  
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .container2 ul {
@@ -261,7 +271,7 @@ img:hover {
 }
 
 .container2 li {
-    margin: 0 20px; 
+    margin: 0 20px;
 }
 
 .container2 img {
@@ -290,36 +300,44 @@ footer {
 }
 
 ::-webkit-scrollbar {
-    width: 13px; 
-  }
-  
-  ::-webkit-scrollbar-track {
-    background: #5e5e5e; 
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background: #2a5f33; 
-    border-radius: 5px; 
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    background: #218026; 
-  }
-  @media only screen and (max-width: 768px) {
-    .container {
-        width: 95%; /* Adjust width for smaller screens */
-        padding: 10px; /* Reduce padding for smaller screens */
-    }
+    width: 13px;
 }
 
-  @media only screen and (max-width: 768px) {
+::-webkit-scrollbar-track {
+    background: #5e5e5e;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2a5f33;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #218026;
+}
+
+@media only screen and (max-width: 768px) {
     #title {
         font-size: 30px;
         margin-right: 2%;
     }
+    .container ul {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 10px;
+        margin: 0px;
+    }
+    .container ul li {
+        flex: 0 0 calc(50% - 10px);
+        max-width: calc(50% - 10px);
+        margin-bottom: 1px;
+    }
     .container {
-            width:fit-content;
-            padding: 10px; 
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 10px;
+        flex: auto;
     }
     #quote {
         font-size: 16px;
@@ -337,12 +355,12 @@ footer {
     }
     #date {
         width: 100%;
-        color:rgb(255, 170, 51);
+        color: rgb(255, 170, 51);
     }
     #submit-btn {
         font-size: 14px;
     }
-    #stock-data-container{
+    #stock-data-container {
         margin: 0px;
     }
     #stock-data-card {
@@ -377,6 +395,11 @@ footer {
         padding: 0%;
         width: fit-content;
     }
+    .logo-image {
+        width: 50px;
+        height: 50px;
+        object-fit: contain;
+    }
 }
 
 @media only screen and (max-width: 1024px) {
@@ -388,10 +411,10 @@ footer {
         width: 70%;
         color: rgb(255, 170, 51);
     }
-    #stock-data{
+    #stock-data {
         font-size: 18px;
     }
-    #stock-data-container{
+    #stock-data-container {
         margin: 0px;
     }
     #stock-data-card {
@@ -400,6 +423,27 @@ footer {
     .container ul li {
         flex: 0 0 calc(50% - 10px);
         padding: 0%;
-        width:10%
+        max-width: 100%;
+    }
+    .container {
+        max-width: 95%;
+        padding: 10px;
+        margin: 0%;
+    }
+    
+}
+
+@media only screen and (max-width: 480px) {
+    .container ul li img {
+        max-width: 80%;
+    }
+    .container {
+        max-width: 100%;
+        padding: 5px;
+    }
+    .logo-image {
+        max-width: 100%;
+        height: 50px;
+        object-fit: contain;
     }
 }
