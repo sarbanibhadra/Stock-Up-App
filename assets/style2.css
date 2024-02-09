@@ -6,9 +6,7 @@ body {
     background-size: cover;
     font-family: 'Alergb(32, 32, 32) a Sans SC';
     font-size: 22px;
-  
 }
-
 #title {
     text-align: center;
     color: rgba(240, 248, 255, 0.87);
@@ -17,9 +15,7 @@ body {
     margin-top: 1%;
     margin-right: 30%;
     cursor: default;
-
 }
-
 #quote {
     text-align: center;
     color: rgb(255, 255, 255);
@@ -29,7 +25,6 @@ body {
     font-size: 50px;
     margin-left: 35%;
     cursor: default;
-
 }
 #navbar-container{
     background-color: rgb(32, 32, 32) !important;
@@ -40,23 +35,21 @@ body {
 #dropdown-card {
     color: rgb(32, 32, 32);
     background-image: url('https://www.color-meanings.com/wp-content/uploads/Blue-and-green-mixing-1024x449.jpeg');
-    background-size: cover; 
+    background-size: cover;
     margin: 0px;
     padding: 2px;
     font-family: 'Alergb(32, 32, 32) a Sans SC';
     font-size: 22px;
 }
-
 #searchbar-title {
     text-align: center;
     font-size: 50px;
     font-weight: 600;
     font-family: 'Alergb(32, 32, 32) a Sans SC';
     margin-right: 50%;
-    color: #ffffff;
+    color: #FFFFFF;
     cursor: default;
 }
-
 #stocks {
     color: rgb(32, 32, 32);
     background-color: #00ffff6e;
@@ -66,10 +59,9 @@ body {
     text-align: center;
     cursor: pointer;
 }
-
 #datepicker {
     color: rgb(0, 0, 0);
-background-color: #ffffff;
+background-color: #FFFFFF;
     text-align: center;
     border-radius: 10px;
     margin-top: 2%;
@@ -78,16 +70,13 @@ background-color: #ffffff;
     margin-top: 2%;
     margin-bottom: 2%;
     margin-left: 4%;
-    
 }
-
 #date {
     margin-left: 4%;
     width: 30%;
     color:rgb(255, 170, 51);
     cursor: default;
 }
-
 #submit-btn {
     margin-bottom: 2%;
     color: aliceblue;
@@ -95,14 +84,11 @@ background-color: #ffffff;
     font-size: 22px;
     font-weight: 600;
 }
-
 #stock-data-container {
     background-image: url('https://www.color-meanings.com/wp-content/uploads/Blue-and-green-mixing-1024x449.jpeg');
-    background-size: cover; 
-   
+    background-size: cover;
     font-weight: 800;
 }
-
 #stock-data-card {
     height: 500px;
     background-color: #000a0ac4;
@@ -113,7 +99,6 @@ background-color: #ffffff;
     margin-left: 4%;
     margin-right: 4%;
 }
-
 #stock-data-header {
     margin-top: 8px;
     margin-bottom: 2px;
@@ -125,7 +110,6 @@ background-color: #ffffff;
     text-align: center;
     cursor: default;
 }
-
 #stock-data {
     margin-top: 8px;
     margin-bottom: 2px;
@@ -136,190 +120,99 @@ background-color: #ffffff;
     text-align: center;
     cursor: default;
 }
-
-#stock-data-error{
-    margin-top: 15px;
-    font-family: 'Alergb(32,32,32)a Sans SC';font-size: 20px;
-    color:rgb(231, 14, 14);
-    font-weight: 400;
-}
 #intro-text {
     margin-top: 5px;
     margin-left: 25%;
     font-size: 40px;
     font-weight: 600;
-    color: #ffffff;
+    color: #FFFFFF;
     cursor: default;
 }
 #navbar-btn{
-  
     background-image: url('https://www.color-meanings.com/wp-content/uploads/Blue-and-green-mixing-1024x449.jpeg');
-    background-size: cover; 
+    background-size: cover;
     opacity: 0.8;
 }
 #coins {
     color: gold;
 }
-
 #graph {
     color: black;
     font-size: 110px;
 }
-
 #globe {
     color: #000000c4;
 }
-
 #moneybag {
     font-size: 90;
     color:rgb(255, 170, 51);
     margin-left: 4%;
 }
-
 #magnifying-glass {
     color: rgba(32, 32, 32, 0.94);
 }
-
 #historical-data {
     align-items: center;
     background-image: url('https://www.color-meanings.com/wp-content/uploads/Blue-and-green-mixing-1024x449.jpeg');
-    background-size: cover; 
+    background-size: cover;
     height: 700px;
     margin-left: 50%;
     margin-top: 8%;
     margin-bottom: 6%;
     border-radius: 60px;
-
 }
-
 #historic-data-text{
     margin-top: 10px;
     margin-bottom: 10px;
 margin-left: 20px;
 }
-
-
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 .image-button {
     display: block;
     text-align: center;
 }
-
 .container ul {
     display: flex;
-    justify-content: space-between; 
-    flex-wrap: wrap; 
-    list-style: none; 
+    justify-content: space-between;
+    flex-wrap: wrap;
+    list-style: none;
     padding: 0;
-      padding: 0 20px;
-}
-  
+  }
   .container ul li {
     flex: 0 0 calc(20% - 10px);
-    margin-top: 60px;
-    margin-bottom: 20px; 
-      justify-content: space-between;
-    padding: 0 20px;
-}
-  
+    margin-bottom: 20px;
+  }
   .container ul li img {
-    width: 100%; 
-    height: auto; 
-      justify-content: space-between;
-    
-}
-  
-
+    width: 100%;
+    height: auto;
+  }
 .logo-image {
-    width: 50x; 
-    height: 50px; 
-    object-fit:contain; 
+    width: 50x;
+    height: 50px;
+    object-fit:contain;
 }
-
 img {
-    max-width: 60%; 
+    max-width: 70%;
     height: auto;
     display: block;
     margin: 0 auto;
     cursor: pointer;
 }
-
-img:hover {
-    transform: scale(1.1);
+#footer{
+    margin-top: 1%;
 }
-
-.container2 {
-    display: flex;
-    flex-wrap: wrap; 
-    justify-content: center; 
-  
+#footer-text{
+    margin: 0px;
 }
-
-.container2 ul {
-    display: flex;
-    list-style: none;
-    padding: 0;
-}
-
-.container2 li {
-    margin: 0 20px; 
-}
-
-.container2 img {
-    max-width: 50px;
-    padding-top: 60%;
-}
-
-footer {
-    color: antiquewhite;
-}
-
-#back-to-top {
-    display: inline-block;
-    background-color: #3b492f;
-    color: #fff;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    margin: 20px auto 0;
-    display: block;
-    width: fit-content;
-}
-
-#back-to-top:hover {
-    background-color: #275300;
-}
-
-::-webkit-scrollbar {
-    width: 13px; 
-  }
-  
-  ::-webkit-scrollbar-track {
-    background: #5e5e5e; 
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background: #2a5f33; 
-    border-radius: 5px; 
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    background: #218026; 
-  }
-  @media only screen and (max-width: 768px) {
-    .container {
-        width: 95%; /* Adjust width for smaller screens */
-        padding: 10px; /* Reduce padding for smaller screens */
-    }
-}
-
-  @media only screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) {
     #title {
         font-size: 30px;
         margin-right: 2%;
-    }
-    .container {
-            width:fit-content;
-            padding: 10px; 
     }
     #quote {
         font-size: 16px;
@@ -374,11 +267,8 @@ footer {
     }
     .container ul li {
         flex: 0 0 calc(50% - 10px);
-        padding: 0%;
-        width: fit-content;
     }
 }
-
 @media only screen and (max-width: 1024px) {
     #datepicker {
         font-size: 20px;
@@ -396,10 +286,5 @@ footer {
     }
     #stock-data-card {
         margin: 2% 2%;
-    }
-    .container ul li {
-        flex: 0 0 calc(50% - 10px);
-        padding: 0%;
-        width:10%
     }
 }
