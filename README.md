@@ -37,7 +37,8 @@
 - Optimize the user interface based on user feedback.
 
 ## Wireframe
-(TBA)
+![Simple diagram of Stock Up app deployed page layout](/assets/images/StockUpWireframeGroup2.png)
+
 
 ## Implementation Stack
 ### Frontend
@@ -66,26 +67,17 @@
 ## Project API's
 
 ### Finnhub API
-- **Endpoint for Fetching Real-Time Data:**
-  - [Finnhub Real-Time Data Endpoint](link-to-finnhub-realtime-endpoint)
-  - **Description:** This endpoint provides real-time stock data, returning an object.
 
-- **Finnhub Quote Endpoint:**
+- **Quote Endpoint:**
   - [Finnhub Quote Endpoint](https://finnhub.io/docs/api/quote)
-  - **Description:** This endpoint returns real-time stock data in the form on an object, inlcuding high, and low stock data.
+  - **Description:** This endpoint returns real-time US stock data points in the form on a quote.
 
 ### Polygon.io API
-- **Endpoint for Fetching Historic Data:**
-  - [Polygon.io Historic Data Endpoint](link-to-polygon-historic-endpoint)
-  - **Description:** This endpoint allows fetching historic stock data.
 
-- **Endpoint for Fetching Current High and Low:**
-  - [Polygon.io Current High/Low Endpoint](link-to-polygon-current-high-low-endpoint)
-  - **Description:** This endpoint provides the current high and low stock values.
-
-- **Endpoint for Fetching Daily Open/Close:**
+- **Daily Open/Close Endpoint:**
   - [Polygon.io Daily Open/Close Endpoint](https://polygon.io/docs/stocks/get_v1_open-close__stocksticker___date)
-  - **Description:** This endpoint provides daily open and close stock values.
+  - **Description:** This endpoint provides historic stock data points for stock, including the open, close and afterhours prices on a chosen date.
+  
 
 ## Roles
 - Corinne Borgeaud: Backend
