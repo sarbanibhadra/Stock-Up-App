@@ -23,6 +23,15 @@
 2. **User-Friendly Interface:**
    - Design an intuitive and responsive user interface for easy navigation and gathering of relevant stock information.
 
+
+## Deployed App in several screen sizes
+
+## Mobile Screen Size
+![Small Screen Size](/assets/images/demo2.png)
+
+## Computer Screen Size
+![Large Screen Size](/assets/images/demo1.png)
+
 ## Development Roadmap
 ### Phase 1: Setup and UI Development
 - Set up the project structure and development environment.
