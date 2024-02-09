@@ -23,6 +23,15 @@
 2. **User-Friendly Interface:**
    - Design an intuitive and responsive user interface for easy navigation and gathering of relevant stock information.
 
+
+## Deployed App in several screen sizes
+
+## Mobile Screen Size
+![Small Screen Size](/assets/images/demo2.png)
+
+## Computer Screen Size
+![Large Screen Size](/assets/images/demo1.png)
+
 ## Development Roadmap
 ### Phase 1: Setup and UI Development
 - Set up the project structure and development environment.
@@ -70,7 +79,7 @@
 
 - **Quote Endpoint:**
   - [Finnhub Quote Endpoint](https://finnhub.io/docs/api/quote)
-  - **Description:** This endpoint returns real-time US stock data points in the form on a quote.
+  - **Description:** This endpoint returns real-time US stock data points in the form of a quote.
 
 ### Polygon.io API
 
