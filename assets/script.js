@@ -101,25 +101,25 @@ function renderHistoricData(){
 
 var currentCompany = historicData.currentCompany;
 if (currentCompany == 'AAPL')
-  src="./assets/images/logoApple.png"
+  src="./assets/images/logoAppleW.png"
 else if (currentCompany == 'MSFT')
-  src="./assets/images/microsoftLogo.png"
+  src="./assets/images/microsoftLogoW.png"
 else if (currentCompany == 'AMZN')
-  src="./assets/images/amazon.png"
+  src="./assets/images/amazonW.png"
 else if (currentCompany == 'NVDA')
-  src="./assets/images/nvidia.png" 
+  src="./assets/images/nvidiaW.png" 
 else if (currentCompany == 'AVGO')
-  src="./assets/images/broad.png"
+  src="./assets/images/broadW.png"
 else if (currentCompany == 'META')
-  src="./assets/images/meta.png"
+  src="./assets/images/metaW.png"
 else if (currentCompany == 'TSLA')
-  src="./assets/images/tesla.png"
+  src="./assets/images/teslaW.png"
 else if (currentCompany == 'GOOGL')
   src = ""
 else if (currentCompany == 'COST')
-  src="./assets/images/costco.png"
+  src="./assets/images/costcoW.png"
 else if (currentCompany == 'NFLX')
-  src="./assets/images/netflix.png"
+  src="./assets/images/netflixW.png"
  
 
   var lastCard = $("#stock-data-card-L")
