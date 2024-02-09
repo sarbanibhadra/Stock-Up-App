@@ -70,7 +70,7 @@
 
 - **Quote Endpoint:**
   - [Finnhub Quote Endpoint](https://finnhub.io/docs/api/quote)
-  - **Description:** This endpoint returns real-time US stock data points in the form on a quote.
+  - **Description:** This endpoint returns real-time US stock data points in the form of a quote.
 
 ### Polygon.io API
 
