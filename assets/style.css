@@ -420,10 +420,10 @@ footer {
     #stock-data-card {
         margin: 2% 2%;
     }
-    .container ul li {
-        flex: 0 0 calc(50% - 10px);
+    .container1 ul li {
+        flex: 0 0 calc(50% - 50px);
         padding: 0%;
-        max-width: 100%;
+        max-width: 20%;
     }
     .container {
         max-width: 95%;
